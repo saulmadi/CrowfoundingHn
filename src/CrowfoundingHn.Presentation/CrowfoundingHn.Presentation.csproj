@@ -38,18 +38,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.Core">
-      <HintPath>..\..\lib\Castle.Core.3.2.2\lib\net45\Castle.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Castle.Windsor">
-      <HintPath>..\..\lib\Castle.Windsor.3.2.1\lib\net45\Castle.Windsor.dll</HintPath>
+    <Reference Include="Autofac">
+      <HintPath>..\..\lib\Autofac.3.4.0\lib\net40\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Nancy">
       <HintPath>..\..\lib\Nancy.0.22.2\lib\net40\Nancy.dll</HintPath>
     </Reference>
-    <Reference Include="Nancy.Bootstrappers.Windsor">
-      <HintPath>..\..\lib\Nancy.Bootstrappers.Windsor.0.22.2\lib\net40\Nancy.Bootstrappers.Windsor.dll</HintPath>
+    <Reference Include="Nancy.Bootstrappers.Autofac">
+      <HintPath>..\..\lib\Nancy.Bootstrappers.Autofac.0.22.2\lib\net40\Nancy.Bootstrappers.Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Nancy.Hosting.Aspnet">
       <HintPath>..\..\lib\Nancy.Hosting.Aspnet.0.22.2\lib\net40\Nancy.Hosting.Aspnet.dll</HintPath>
@@ -72,13 +69,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Global.asax" />
+    <Content Include="index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
+    <Compile Include="App\Infrastructure\ApiBootstrapper.cs" />
+    <Compile Include="App\Infrastructure\Bootstraper.cs" />
+    <Compile Include="App\Infrastructure\IBoostraperTask.cs" />
+    <Compile Include="App\Modules\HomeModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -92,10 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Api\" />
-    <Folder Include="App\Infrastructure\" />
-    <Folder Include="App\Modules\" />
     <Folder Include="App\Requests\" />
     <Folder Include="App\Responses\" />
+    <Folder Include="Assets\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
