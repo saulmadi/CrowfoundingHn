@@ -1,6 +1,8 @@
-﻿namespace CrowfoundingHn.Common
+﻿
+namespace CrowfoundingHn.Common
 {
     public interface IDomainEvent
     {
+        void Raise(IEvent @event);
     }
 }

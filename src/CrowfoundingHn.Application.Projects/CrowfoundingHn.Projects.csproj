@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Application\CommandHandlers\CreateProjectHandler.cs" />
     <Compile Include="Application\Commands\CreateProject.cs" />
+    <Compile Include="Application\Events\ProjectCreated.cs" />
     <Compile Include="Domain\IProjectRepository.cs" />
     <Compile Include="Domain\Project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

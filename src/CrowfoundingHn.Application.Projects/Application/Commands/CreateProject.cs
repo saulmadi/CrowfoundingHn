@@ -23,7 +23,7 @@ namespace CrowfoundingHn.Projects.Application.Commands
             Abstract = @abstract;
             Description = description;
             ImagesUrls = imagesUrls;
-            VideosUrls = videosUrls;
+            VideoUrls = videosUrls;
             TargetAmount = targetAmount;
             PredefinedAmounts = predefinedAmounts;
         }
@@ -36,7 +36,7 @@ namespace CrowfoundingHn.Projects.Application.Commands
 
         public IEnumerable<string> ImagesUrls { get; private set; }
 
-        public IEnumerable<string> VideosUrls { get; private set; }
+        public IEnumerable<string> VideoUrls { get; private set; }
 
         public double TargetAmount { get; set; }
 
