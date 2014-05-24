@@ -73,10 +73,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App\Infrastructure\ApiBootstrapper.cs" />
-    <Compile Include="App\Infrastructure\Bootstraper.cs" />
-    <Compile Include="App\Infrastructure\IBoostraperTask.cs" />
-    <Compile Include="App\Modules\HomeModule.cs" />
+    <Compile Include="Api\Infrastructure\ApiBootstrapper.cs" />
+    <Compile Include="Api\Infrastructure\Bootstraper.cs" />
+    <Compile Include="Api\Infrastructure\IBoostraperTask.cs" />
+    <Compile Include="Api\Modules\HomeModule.cs" />
+    <Compile Include="Api\Modules\ProjectsModule.cs" />
+    <Compile Include="Api\Requests\ProjectRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -89,9 +91,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Api\" />
-    <Folder Include="App\Requests\" />
-    <Folder Include="App\Responses\" />
+    <Folder Include="Api\Responses\" />
+    <Folder Include="App\" />
     <Folder Include="Assets\" />
   </ItemGroup>
   <PropertyGroup>

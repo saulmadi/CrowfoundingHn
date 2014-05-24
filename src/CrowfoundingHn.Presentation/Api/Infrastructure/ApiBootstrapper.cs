@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 
 using Nancy;
 using Nancy.Conventions;
 
-namespace CrowfoundingHn.Presentation.App.Infrastructure
+namespace CrowfoundingHn.Presentation.Api.Infrastructure
 {
     public class ApiBootstrapper : Bootstrapper
     {

@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 using Autofac;
 
 using Nancy.Bootstrappers.Autofac;
 
-namespace CrowfoundingHn.Presentation.App.Infrastructure
+namespace CrowfoundingHn.Presentation.Api.Infrastructure
 {
     public abstract class Bootstrapper : AutofacNancyBootstrapper
     {
