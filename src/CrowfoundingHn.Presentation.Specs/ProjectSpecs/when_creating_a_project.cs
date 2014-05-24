@@ -1,4 +1,6 @@
-﻿using CrowfoundingHn.Common;
+﻿using AcklenAvenue.Testing.Moq.ExpectedObjects;
+
+using CrowfoundingHn.Common;
 using CrowfoundingHn.Presentation.Api.Modules;
 using CrowfoundingHn.Presentation.Api.Requests;
 using CrowfoundingHn.Projects.Application.Commands;
@@ -36,12 +38,21 @@ namespace CrowfoundingHn.Presentation.Specs.ProjectSpecs
                         });
 
                 _projectRequest = Builder<ProjectRequest>.CreateNew().Build();
-                _createProject = Builder<CreateProject>.CreateNew().Build();
+                _createProject = new CreateProject(
+                    _projectRequest.Name,
+                    _projectRequest.Abstract,
+                    _projectRequest.Description,
+                    _projectRequest.ImagesUrls,
+                    _projectRequest.VideosUrls,
+                    _projectRequest.TargetAmount,
+                    _projectRequest.PredefinedAmounts);
             };
 
         Because of = () => _browser.PostSecureJson("/projects", _projectRequest);
 
         It should_dispatch_the_command_create_project =
-            () => Mock.Get(_commandDispatcher).Verify(dispatcher => dispatcher.Dispatch(_createProject));
+            () =>
+            Mock.Get(_commandDispatcher).Verify(
+                dispatcher => dispatcher.Dispatch(WithExpected.Object(_createProject)));
     }
 }

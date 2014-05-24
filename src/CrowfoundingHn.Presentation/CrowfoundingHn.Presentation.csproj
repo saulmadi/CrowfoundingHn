@@ -95,6 +95,16 @@
     <Folder Include="App\" />
     <Folder Include="Assets\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CrowfoundingHn.Application.Projects\CrowfoundingHn.Projects.csproj">
+      <Project>{993D1ABD-E87A-4695-A7B3-93A6DD6D7036}</Project>
+      <Name>CrowfoundingHn.Projects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrowfoundingHn.Common\CrowfoundingHn.Common.csproj">
+      <Project>{B0D3E75C-BBFC-4C30-9F4A-4DB57C9E70E4}</Project>
+      <Name>CrowfoundingHn.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
