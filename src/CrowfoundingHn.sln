@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowfoundingHn.Common", "Cr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowfoundingHn.Projects", "CrowfoundingHn.Application.Projects\CrowfoundingHn.Projects.csproj", "{993D1ABD-E87A-4695-A7B3-93A6DD6D7036}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowfoundingHn.Projects.Specs", "CrowfoundingHn.Projects.Specs\CrowfoundingHn.Projects.Specs.csproj", "{7CF08BDA-9867-4DA6-90F1-F4009B1C944C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{993D1ABD-E87A-4695-A7B3-93A6DD6D7036}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{993D1ABD-E87A-4695-A7B3-93A6DD6D7036}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{993D1ABD-E87A-4695-A7B3-93A6DD6D7036}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CF08BDA-9867-4DA6-90F1-F4009B1C944C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CF08BDA-9867-4DA6-90F1-F4009B1C944C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CF08BDA-9867-4DA6-90F1-F4009B1C944C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CF08BDA-9867-4DA6-90F1-F4009B1C944C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +53,7 @@ Global
 		{9D0AA903-D157-478E-8382-71F30C3B887F} = {B55319F7-79A8-4844-AE3E-784E1849B97C}
 		{00C71E67-3F87-40DA-BF1C-2125A243AE0F} = {B55319F7-79A8-4844-AE3E-784E1849B97C}
 		{993D1ABD-E87A-4695-A7B3-93A6DD6D7036} = {B7BF8E26-8974-4C5E-88E6-4EC9A9008553}
+		{7CF08BDA-9867-4DA6-90F1-F4009B1C944C} = {B7BF8E26-8974-4C5E-88E6-4EC9A9008553}
 		{B0D3E75C-BBFC-4C30-9F4A-4DB57C9E70E4} = {3D54FEDD-D75C-4E0D-BAED-87CB426B1BD6}
 	EndGlobalSection
 EndGlobal
