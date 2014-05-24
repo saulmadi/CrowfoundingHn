@@ -6,6 +6,10 @@ namespace CrowfoundingHn.Projects.Application.Commands
 {
     public class CreateProject : ICommand
     {
+        protected   CreateProject()
+        {
+            
+        }
         public CreateProject(
             string name,
             string @abstract,

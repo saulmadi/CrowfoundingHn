@@ -41,6 +41,8 @@
   <ItemGroup>
     <Compile Include="ICommand.cs" />
     <Compile Include="ICommandDispatcher.cs" />
+    <Compile Include="ICommandHandler.cs" />
+    <Compile Include="IDomainEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
