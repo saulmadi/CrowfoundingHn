@@ -39,13 +39,14 @@ namespace CrowfoundingHn.Projects.Specs.Application
                 _domainEvents = Mock.Of<IDomainEvent>();
                 _commandHandler = new CreateProjectHandler(_projectRepository, _domainEvents);
 
-                _createProject = Builder<CreateProject>.CreateNew()
-                                                       .With(project => project.PredefinedAmounts, new[]{12.12}.ToList())
-                                                       .With(project => project.ImagesUrls, new[]{"dd"}.ToList())
-                                                       .With(project => project.VideoUrls, new[]{"dd"}.ToList())
-                                                       .Build();
+                _createProject =
+                    Builder<CreateProject>.CreateNew()
+                                          .With(project => project.PredefinedAmounts, new[] { 12.12 }.ToList())
+                                          .With(project => project.ImagesUrls, new[] { "dd" }.ToList())
+                                          .With(project => project.VideoUrls, new[] { "dd" }.ToList())
+                                          .Build();
 
-                var id = Guid.NewGuid();
+                Guid id = Guid.NewGuid();
                 SystemGuid.New = () => id;
                 _expectedProject =
                     Builder<Project>.CreateNew()
@@ -59,7 +60,7 @@ namespace CrowfoundingHn.Projects.Specs.Application
                                     .With(project => project.PredefinedAmounts, _createProject.PredefinedAmounts)
                                     .With(project => project.VideoUrls, _createProject.VideoUrls)
                                     .Build();
-                _expectedEProjectCreated = new ProjectCreated(_expectedProject) ;
+                _expectedEProjectCreated = new ProjectCreated(_expectedProject);
             };
 
         Because of = () => _commandHandler.Handle(_createProject);
