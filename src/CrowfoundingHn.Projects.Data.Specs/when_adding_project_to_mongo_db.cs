@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 
 using CrowfoundingHn.Projects.Domain;
 
@@ -15,7 +16,9 @@ namespace CrowfoundingHn.Projects.Data.Specs
     {
         static ProjectRepository _projectRepository;
 
-        static Project _project;
+        static Project _expectedProject;
+
+        static MongoCollection<BsonDocument> _collection;
 
         Establish context = () =>
             {
@@ -23,16 +26,16 @@ namespace CrowfoundingHn.Projects.Data.Specs
                 var mongoUri = new MongoUrl(connectionString);
                 var client = new MongoClient(mongoUri);
 
-                MongoCollection<BsonDocument> collection =
-                    client.GetServer().GetDatabase(mongoUri.DatabaseName).GetCollection("Projects");
+                _collection = client.GetServer().GetDatabase(mongoUri.DatabaseName).GetCollection("Projects");
 
-                _projectRepository = new ProjectRepository(collection);
+                _projectRepository = new ProjectRepository(_collection);
 
-                _project = Builder<Project>.CreateNew().Build();
+                _expectedProject = Builder<Project>.CreateNew().With(project => project.Id, Guid.NewGuid()).Build();
             };
 
-        Because of = () => _projectRepository.Create();
+        Because of = () => _projectRepository.Create(_expectedProject);
 
-        It should_insert_the_new_project = () => { };
+        It should_insert_the_new_project =
+            () => _collection.FindOneByIdAs<Project>(_expectedProject.Id).ShouldBeLike(_expectedProject);
     }
 }
