@@ -39,10 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\CreateProject.cs" />
+    <Compile Include="Application\Commands\CreateProject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CrowfoundingHn.Common\CrowfoundingHn.Common.csproj">
+      <Project>{b0d3e75c-bbfc-4c30-9f4a-4db57c9e70e4}</Project>
+      <Name>CrowfoundingHn.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
