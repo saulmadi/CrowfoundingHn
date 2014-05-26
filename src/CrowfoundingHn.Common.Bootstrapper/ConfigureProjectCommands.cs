@@ -18,7 +18,7 @@ namespace CrowfoundingHn.Common.Bootstrapper
                         var projectAssembly = typeof(CreateProject).Assembly;
 
                         builder.RegisterAssemblyTypes(projectAssembly)
-                               .Where(type => type.Namespace.EndsWith(typeof(CreateProjectHandler).Namespace))
+                               .Where(type => typeof(CreateProjectHandler).Namespace.EndsWith(type.Namespace))
                                .AsImplementedInterfaces();
 
                     };

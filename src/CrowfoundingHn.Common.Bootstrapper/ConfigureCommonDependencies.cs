@@ -15,6 +15,7 @@ namespace CrowfoundingHn.Common.Bootstrapper
                     { 
                         builder.RegisterType<AutoFacCommandDispatcher>().As<ICommandDispatcher>();
                         builder.RegisterType<AutoFacDomainEventDispatcher>().As<IDomainEvent>();
+                        builder.RegisterType<MongoCollectionFactory>().As<IMongoCollectionFactory>();
                     };
             }
      

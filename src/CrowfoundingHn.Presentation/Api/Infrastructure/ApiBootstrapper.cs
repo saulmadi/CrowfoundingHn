@@ -12,6 +12,8 @@ namespace CrowfoundingHn.Presentation.Api.Infrastructure
         public ApiBootstrapper()
         {
             AddBootstrapperTask(new ConfigureCommonDependencies());
+            AddBootstrapperTask(new ConfigureProjectCommands());
+            AddBootstrapperTask(new ConfigureProjectDependencies());
         }
         protected override void RequestStartup(Autofac.ILifetimeScope container, Nancy.Bootstrapper.IPipelines pipelines, NancyContext context)
         {

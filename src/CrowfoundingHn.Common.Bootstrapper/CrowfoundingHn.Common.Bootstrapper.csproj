@@ -33,6 +33,12 @@
     <Reference Include="Autofac">
       <HintPath>..\..\lib\Autofac.3.4.0\lib\net40\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\..\lib\mongocsharpdriver.1.9.1\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\lib\mongocsharpdriver.1.9.1\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,6 +50,7 @@
   <ItemGroup>
     <Compile Include="ConfigureCommonDependencies.cs" />
     <Compile Include="ConfigureProjectCommands.cs" />
+    <Compile Include="ConfigureProjectDependencies.cs" />
     <Compile Include="IBootstrapperTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,6 +65,10 @@
     <ProjectReference Include="..\CrowfoundingHn.Common\CrowfoundingHn.Common.csproj">
       <Project>{B0D3E75C-BBFC-4C30-9F4A-4DB57C9E70E4}</Project>
       <Name>CrowfoundingHn.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrowfoundingHn.Projects.Data\CrowfoundingHn.Projects.Data.csproj">
+      <Project>{7FD70C5A-2415-4F60-BCF4-306E9CD52995}</Project>
+      <Name>CrowfoundingHn.Projects.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
