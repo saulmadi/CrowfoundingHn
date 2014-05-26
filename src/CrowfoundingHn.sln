@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowfoundingHn.Projects.Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowfoundingHn.Projects.Data.Specs", "CrowfoundingHn.Projects.Data.Specs\CrowfoundingHn.Projects.Data.Specs.csproj", "{8F64669B-5C46-4ABB-B290-36973291B5F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowfoundingHn.Common.Specs", "CrowfoundingHn.Common.Specs\CrowfoundingHn.Common.Specs.csproj", "{DC7C89EF-AB6A-4EC2-BDA9-512908B1104D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrowfoundingHn.Common.Bootstrapper", "CrowfoundingHn.Common.Bootstrapper\CrowfoundingHn.Common.Bootstrapper.csproj", "{98B324F3-94CC-47A4-B10F-E8F0B15F9AAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,14 @@ Global
 		{8F64669B-5C46-4ABB-B290-36973291B5F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F64669B-5C46-4ABB-B290-36973291B5F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F64669B-5C46-4ABB-B290-36973291B5F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC7C89EF-AB6A-4EC2-BDA9-512908B1104D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC7C89EF-AB6A-4EC2-BDA9-512908B1104D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC7C89EF-AB6A-4EC2-BDA9-512908B1104D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC7C89EF-AB6A-4EC2-BDA9-512908B1104D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98B324F3-94CC-47A4-B10F-E8F0B15F9AAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98B324F3-94CC-47A4-B10F-E8F0B15F9AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98B324F3-94CC-47A4-B10F-E8F0B15F9AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98B324F3-94CC-47A4-B10F-E8F0B15F9AAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,5 +81,7 @@ Global
 		{7FD70C5A-2415-4F60-BCF4-306E9CD52995} = {B7BF8E26-8974-4C5E-88E6-4EC9A9008553}
 		{8F64669B-5C46-4ABB-B290-36973291B5F6} = {B7BF8E26-8974-4C5E-88E6-4EC9A9008553}
 		{B0D3E75C-BBFC-4C30-9F4A-4DB57C9E70E4} = {3D54FEDD-D75C-4E0D-BAED-87CB426B1BD6}
+		{DC7C89EF-AB6A-4EC2-BDA9-512908B1104D} = {3D54FEDD-D75C-4E0D-BAED-87CB426B1BD6}
+		{98B324F3-94CC-47A4-B10F-E8F0B15F9AAD} = {3D54FEDD-D75C-4E0D-BAED-87CB426B1BD6}
 	EndGlobalSection
 EndGlobal

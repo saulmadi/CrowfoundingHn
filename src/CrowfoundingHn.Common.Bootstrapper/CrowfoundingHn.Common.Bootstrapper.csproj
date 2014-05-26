@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8F64669B-5C46-4ABB-B290-36973291B5F6}</ProjectGuid>
+    <ProjectGuid>{98B324F3-94CC-47A4-B10F-E8F0B15F9AAD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CrowfoundingHn.Projects.Data.Specs</RootNamespace>
-    <AssemblyName>CrowfoundingHn.Projects.Data.Specs</AssemblyName>
+    <RootNamespace>CrowfoundingHn.Common.Bootstrapper</RootNamespace>
+    <AssemblyName>CrowfoundingHn.Common.Bootstrapper</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,26 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FizzWare.NBuilder">
-      <HintPath>..\..\lib\NBuilder.3.0.1.1\lib\FizzWare.NBuilder.dll</HintPath>
-    </Reference>
-    <Reference Include="Machine.Specifications">
-      <HintPath>..\..\lib\Machine.Specifications.0.8.2\lib\net45\Machine.Specifications.dll</HintPath>
-    </Reference>
-    <Reference Include="Machine.Specifications.Clr4">
-      <HintPath>..\..\lib\Machine.Specifications.0.8.2\lib\net45\Machine.Specifications.Clr4.dll</HintPath>
-    </Reference>
-    <Reference Include="Machine.Specifications.Should">
-      <HintPath>..\..\lib\Machine.Specifications.Should.0.7.2\lib\net45\Machine.Specifications.Should.dll</HintPath>
-    </Reference>
-    <Reference Include="MongoDB.Bson">
-      <HintPath>..\..\lib\mongocsharpdriver.1.9.1\lib\net35\MongoDB.Bson.dll</HintPath>
-    </Reference>
-    <Reference Include="MongoDB.Driver">
-      <HintPath>..\..\lib\mongocsharpdriver.1.9.1\lib\net35\MongoDB.Driver.dll</HintPath>
+    <Reference Include="Autofac">
+      <HintPath>..\..\lib\Autofac.3.4.0\lib\net40\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -58,37 +42,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="when_adding_project_to_mongo_db.cs" />
+    <Compile Include="ConfigureCommonDependencies.cs" />
+    <Compile Include="IBootstrapperTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="connectionString.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CrowfoundingHn.Application.Projects\CrowfoundingHn.Projects.csproj">
-      <Project>{993D1ABD-E87A-4695-A7B3-93A6DD6D7036}</Project>
-      <Name>CrowfoundingHn.Projects</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CrowfoundingHn.Common\CrowfoundingHn.Common.csproj">
       <Project>{B0D3E75C-BBFC-4C30-9F4A-4DB57C9E70E4}</Project>
       <Name>CrowfoundingHn.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CrowfoundingHn.Projects.Data\CrowfoundingHn.Projects.Data.csproj">
-      <Project>{7FD70C5A-2415-4F60-BCF4-306E9CD52995}</Project>
-      <Name>CrowfoundingHn.Projects.Data</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>IF NOT EXIST "$(ProjectDir)connectionString.config" copy "$(ProjectDir)connectionString.config.default" "$(ProjectDir)connectionString.config"
-</PreBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

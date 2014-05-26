@@ -1,5 +1,7 @@
 using System;
 
+using CrowfoundingHn.Common.Bootstrapper;
+
 using Nancy;
 using Nancy.Conventions;
 
@@ -9,9 +11,7 @@ namespace CrowfoundingHn.Presentation.Api.Infrastructure
     {
         public ApiBootstrapper()
         {
-            //add bootraper task here..
-           // AddBootstrapperTask(new ConfigureApiDependencies());
-       
+            AddBootstrapperTask(new ConfigureCommonDependencies());
         }
         protected override void RequestStartup(Autofac.ILifetimeScope container, Nancy.Bootstrapper.IPipelines pipelines, NancyContext context)
         {

@@ -1,6 +1,6 @@
 using System;
 
-namespace CrowfoundingHn.Presentation.Api.Infrastructure
+namespace CrowfoundingHn.Common.Bootstrapper
 {
     public interface IBootstrapperTask<in TContainer>
     {

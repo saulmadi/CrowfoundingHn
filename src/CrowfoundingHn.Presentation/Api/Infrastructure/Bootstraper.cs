@@ -2,6 +2,8 @@ using System.Collections.Generic;
 
 using Autofac;
 
+using CrowfoundingHn.Common.Bootstrapper;
+
 using Nancy.Bootstrappers.Autofac;
 
 namespace CrowfoundingHn.Presentation.Api.Infrastructure
