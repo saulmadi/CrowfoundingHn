@@ -18,7 +18,7 @@ namespace CrowfoundingHn.Presentation.Api.Infrastructure
         protected override void RequestStartup(Autofac.ILifetimeScope container, Nancy.Bootstrapper.IPipelines pipelines, NancyContext context)
         {
 
-            pipelines.OnError += (ctx, err) => HandleExceptions(err, ctx);
+            //pipelines.OnError += (ctx, err) => HandleExceptions(err, ctx);
 
             pipelines.AfterRequest.AddItemToEndOfPipeline(AddCorsHeaders());
 
@@ -29,7 +29,7 @@ namespace CrowfoundingHn.Presentation.Api.Infrastructure
         {
             if (ctx.Response == null)
             {
-                ctx.Response = new Response();
+                ctx.Response = new Response(){};
                 AddCorsHeaders()(ctx);
             }
 

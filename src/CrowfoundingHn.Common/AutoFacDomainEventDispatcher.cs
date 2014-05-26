@@ -23,7 +23,7 @@ namespace CrowfoundingHn.Common
 
             foreach (dynamic handler in handlers)
             {
-                handler.Handle(@event);
+                handler.Handle((dynamic)@event);
             }
         }
     }

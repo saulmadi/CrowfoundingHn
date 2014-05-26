@@ -18,7 +18,7 @@ namespace CrowfoundingHn.Common
 
             dynamic handler = _lifetimeScope.Resolve(typeOfService);
 
-            handler.Handle(command);
+            handler.Handle((dynamic)command);
 
         }
     }
