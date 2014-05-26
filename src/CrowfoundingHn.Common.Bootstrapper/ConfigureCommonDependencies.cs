@@ -4,10 +4,6 @@ using Autofac;
 
 namespace CrowfoundingHn.Common.Bootstrapper
 {
-    public class ConfigureProjectCommands:IBootstrapperTask<ContainerBuilder>
-    {
-        public Action<ContainerBuilder> Task { get; private set; }
-    }
     public class ConfigureCommonDependencies:IBootstrapperTask<ContainerBuilder>
     {
 
