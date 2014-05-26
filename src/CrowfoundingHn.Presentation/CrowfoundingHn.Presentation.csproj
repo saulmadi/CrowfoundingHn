@@ -69,6 +69,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\Config.js" />
+    <Content Include="App\Controller\ProjectController.js" />
+    <Content Include="App\Services\ProjectService.js" />
+    <Content Include="App\Views\home.html" />
+    <Content Include="App\Views\project.html" />
+    <Content Include="Assets\bower_components\angular-route\angular-route.js" />
+    <Content Include="Assets\bower_components\angular-route\angular-route.min.js" />
+    <Content Include="Assets\bower_components\angular\angular-csp.css" />
+    <Content Include="Assets\bower_components\angular\angular.js" />
+    <Content Include="Assets\bower_components\angular\angular.min.js" />
     <Content Include="Views\index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -85,6 +95,15 @@
     <Content Include="connectionString.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\bower_components\angular\.bower.json" />
+    <Content Include="Assets\bower_components\angular\angular.min.js.gzip" />
+    <Content Include="Assets\bower_components\angular\angular.min.js.map" />
+    <Content Include="Assets\bower_components\angular\bower.json" />
+    <Content Include="Assets\bower_components\angular\README.md" />
+    <Content Include="Assets\bower_components\angular-route\.bower.json" />
+    <Content Include="Assets\bower_components\angular-route\angular-route.min.js.map" />
+    <Content Include="Assets\bower_components\angular-route\bower.json" />
+    <Content Include="Assets\bower_components\angular-route\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -94,8 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Api\Responses\" />
-    <Folder Include="App\" />
-    <Folder Include="Assets\" />
+    <Folder Include="App\Directives\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CrowfoundingHn.Application.Projects\CrowfoundingHn.Projects.csproj">

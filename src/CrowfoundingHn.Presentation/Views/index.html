@@ -1,10 +1,21 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="crowfoundingHn">
 <head>
     <title>Crowdfounding</title>
+    <script src="../Assets/bower_components/angular/angular.js"></script>
+    <script src="../Assets/bower_components/angular-route/angular-route.js"></script>
+
 </head>
 <body>
-    <h1>Hello world</h1>
+    <div ng-view></div>
+
+    <script src="../App/Config.js"></script>
+    
+    <!-- controllers -->
+    <script src="../App/Controller/ProjectController.js"></script>
+    <!-- services -->
+    <script src="../App/Services/ProjectService.js"></script>
 
 </body>
+
 </html>
