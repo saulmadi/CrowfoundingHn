@@ -5,6 +5,7 @@
 *.suo
 *.user
 *.sln.docstates
+connectionString.config
 
 # Build results
 [Dd]ebug/

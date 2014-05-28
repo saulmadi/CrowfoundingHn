@@ -69,18 +69,41 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\Config.js" />
+    <Content Include="App\Controller\ProjectController.js" />
+    <Content Include="App\Services\ProjectService.js" />
+    <Content Include="App\Views\home.html" />
+    <Content Include="App\Views\project.html" />
+    <Content Include="Assets\bower_components\angular-route\angular-route.js" />
+    <Content Include="Assets\bower_components\angular-route\angular-route.min.js" />
+    <Content Include="Assets\bower_components\angular\angular-csp.css" />
+    <Content Include="Assets\bower_components\angular\angular.js" />
+    <Content Include="Assets\bower_components\angular\angular.min.js" />
     <Content Include="Views\index.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App\Infrastructure\ApiBootstrapper.cs" />
-    <Compile Include="App\Infrastructure\Bootstraper.cs" />
-    <Compile Include="App\Infrastructure\IBoostraperTask.cs" />
-    <Compile Include="App\Modules\HomeModule.cs" />
+    <Compile Include="Api\Infrastructure\ApiBootstrapper.cs" />
+    <Compile Include="Api\Infrastructure\Bootstraper.cs" />
+    <Compile Include="Api\Modules\HomeModule.cs" />
+    <Compile Include="Api\Modules\ProjectsModule.cs" />
+    <Compile Include="Api\Requests\ProjectRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="connectionString.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\bower_components\angular\.bower.json" />
+    <Content Include="Assets\bower_components\angular\angular.min.js.gzip" />
+    <Content Include="Assets\bower_components\angular\angular.min.js.map" />
+    <Content Include="Assets\bower_components\angular\bower.json" />
+    <Content Include="Assets\bower_components\angular\README.md" />
+    <Content Include="Assets\bower_components\angular-route\.bower.json" />
+    <Content Include="Assets\bower_components\angular-route\angular-route.min.js.map" />
+    <Content Include="Assets\bower_components\angular-route\bower.json" />
+    <Content Include="Assets\bower_components\angular-route\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -89,10 +112,22 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Api\" />
-    <Folder Include="App\Requests\" />
-    <Folder Include="App\Responses\" />
-    <Folder Include="Assets\" />
+    <Folder Include="Api\Responses\" />
+    <Folder Include="App\Directives\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CrowfoundingHn.Application.Projects\CrowfoundingHn.Projects.csproj">
+      <Project>{993D1ABD-E87A-4695-A7B3-93A6DD6D7036}</Project>
+      <Name>CrowfoundingHn.Projects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrowfoundingHn.Common.Bootstrapper\CrowfoundingHn.Common.Bootstrapper.csproj">
+      <Project>{98B324F3-94CC-47A4-B10F-E8F0B15F9AAD}</Project>
+      <Name>CrowfoundingHn.Common.Bootstrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrowfoundingHn.Common\CrowfoundingHn.Common.csproj">
+      <Project>{B0D3E75C-BBFC-4C30-9F4A-4DB57C9E70E4}</Project>
+      <Name>CrowfoundingHn.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -119,6 +154,10 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>IF NOT EXIST "$(ProjectDir)connectionString.config" copy "$(ProjectDir)connectionString.config.default" "$(ProjectDir)connectionString.config"
+</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
