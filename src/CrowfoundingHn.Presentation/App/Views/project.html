@@ -1,9 +1,54 @@
-﻿<div>
-    <form name="addProjectForm">
-        <fieldset>
-            <label for="name">Name</label>
-            <input type="text" ng-model="project.Name" id="name"/>
-        </fieldset>
+﻿
+    <div class="container" data-mbcode_id="1000_1025">
+    <form role="form" data-mbcode_id="1000_1028">
+        <div class="form-group" data-mbcode_id="1000_1029">
+            <label for="name" data-mbcode_id="1000_1030">Name</label>           
+    
+			<input type="text" ng-required ="true" class="form-control" ng-model ="project.Name" id="name" placeholder="Name" data-mbcode_id="1000_1031">
+    
+
+        </div>
+        
+        <div class="form-group" data-mbcode_id="1000_1195">
+        <label class="control-label" for="description" data-mbcode_id="1000_1196">Description<br class=""></label>      
+   
+  			<textarea class="form-control" data-mbcode_id="1000_1511"  id="description" placeholder="Description" ng-model="project.Description"></textarea>
+
+    	</div>
+      
+      <div class="form-group" data-mbcode_id="1000_1607">
+        <label class="control-label" for="description" data-mbcode_id="1000_119">Abstract<br class=""></label>      
+   
+  			<textarea class="form-control" data-mbcode_id="1000_1512" id="abstract" placeholder="Abstract" ng-model="project.Abstract" ></textarea>
+
+    	</div>
+  
+
+  
+      <div class="form-group" data-mbcode_id="1000_1624">
+              <label class="control-label" for="targetAmount" data-mbcode_id="1000_1625">Target Amount</label>
+              <input type="number" placeholder="Target Amount" class="form-control" id="targetAmount" ng-model="project.TargetAmount" data-mbcode_id="1000_1626">
+    
+
+       </div>
+
+        <div class="form-group" data-mbcode_id="1000_1822">
+        <label class="control-label" for="predefinedAmounts" data-mbcode_id="1000_1823">Predefinend Amounts</label>
+        <input type="text" class="form-control" id="predefinedAmounts" ng-list=";" ng-model="project.PredefinedAmounts" data-mbcode_id="1000_1824">
+    </div>
+      
+      <div class="form-group" data-mbcode_id="1000_1880">
+        
+          
+              <label class="control-label" for="deadline" data-mbcode_id="1000_1881">Dead Line</label>
+              <input type="text" class="form-control" id="deadline" ng-click="open($event)"  datepicker-popup="dd/MMMM/yyyy" ng-model="project.DeadLine" is-open="opened"   ng-required="true" close-text="Close" />
+          
+    </div>
+      
+      <footer data-mbcode_id="1000_1963" class="text-right">
+        <button type="button" class="btn btn-primary" data-mbcode_id="1000_2003" ng-click="addProject(project)" >Create</button>
+        <button type="button" class="btn btn-danger" data-mbcode_id="1000_2043">Cancel</button>
+      </footer>
     </form>
-    <button ng-click ="addProject(project)" type="button">Create Project</button>
 </div>
+    

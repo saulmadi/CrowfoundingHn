@@ -50,6 +50,7 @@ namespace CrowfoundingHn.Projects.Specs.Application
                 SystemGuid.New = () => id;
                 _expectedProject =
                     Builder<Project>.CreateNew()
+                                    .With(project => project.State,ProjectState.Editing )
                                     .With(project => project.Id, id)
                                     .With(project => project.Name, _createProject.Name)
                                     .With(project => project.Abstract, _createProject.Abstract)

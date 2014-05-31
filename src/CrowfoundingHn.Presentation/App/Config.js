@@ -1,4 +1,4 @@
-﻿var app = angular.module("crowfoundingHn", ["ng", "ngRoute"]);
+﻿var app = angular.module("crowfoundingHn", ["ng", "ngRoute", "ui.bootstrap"]);
 
 app.config(function ($routeProvider) {
     $routeProvider
