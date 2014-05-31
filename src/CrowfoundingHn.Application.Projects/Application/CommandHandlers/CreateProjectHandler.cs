@@ -20,12 +20,14 @@ namespace CrowfoundingHn.Projects.Application.CommandHandlers
         public void Handle(CreateProject command)
         {
             var project = new Project(SystemGuid.New(),command.Name);
+
             project.SetAbstract(command.Abstract);
             project.SetDescription(command.Description);
             project.SetTargetAmount(command.TargetAmount);
             project.SetPredefinedAmounts(command.PredefinedAmounts);
             project.SetImageUrls(command.ImagesUrls);
             project.SetVideoUrls(command.VideoUrls);
+            project.SetFirstState();
             
                 
 

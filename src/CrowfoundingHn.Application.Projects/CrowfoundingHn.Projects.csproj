@@ -44,6 +44,7 @@
     <Compile Include="Application\Events\ProjectCreated.cs" />
     <Compile Include="Domain\IProjectRepository.cs" />
     <Compile Include="Domain\Project.cs" />
+    <Compile Include="Domain\ProjectState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

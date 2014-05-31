@@ -14,7 +14,9 @@ namespace CrowfoundingHn.Projects.Domain
 
         IEnumerable<string> _videoUrls = new List<string>();
 
-        public Project()
+        ProjectState _state = new ProjectState(null);
+
+        protected Project()
         {
         }
 
@@ -70,6 +72,18 @@ namespace CrowfoundingHn.Projects.Domain
 
         public Guid Id { get; private set; }
 
+        public ProjectState State
+        {
+            get
+            {
+                return _state;
+            }
+            private set
+            {
+                _state = value;
+            }
+        }
+
         public void SetAbstract(string @abstract)
         {
             Abstract = @abstract;
@@ -98,6 +112,11 @@ namespace CrowfoundingHn.Projects.Domain
         public void SetVideoUrls(IEnumerable<string> videoUrls)
         {
             _videoUrls = videoUrls.ToList();
+        }
+
+        public void SetFirstState()
+        {
+            _state = ProjectState.Editing;
         }
     }
 }
