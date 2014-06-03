@@ -25,7 +25,7 @@ namespace CrowfoundingHn.Presentation.Specs.AuthSpecs
 
         static Browser _browser;
 
-        static IUserRepositiory _userRepository;
+        static IUserRepository _userRepository;
 
         static UserRequest _userRequest;
 
@@ -36,7 +36,7 @@ namespace CrowfoundingHn.Presentation.Specs.AuthSpecs
         Establish context = () =>
             {
                 _commandDisptacher = Mock.Of<ICommandDispatcher>();
-                _userRepository = Mock.Of<IUserRepositiory>();
+                _userRepository = Mock.Of<IUserRepository>();
                 _browser = new Browser(
                     x =>
                         {
