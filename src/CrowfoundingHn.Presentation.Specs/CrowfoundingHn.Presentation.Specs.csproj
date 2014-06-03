@@ -76,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthSpecs\when_creating_a_new_user.cs" />
     <Compile Include="ProjectSpecs\when_creating_a_project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecureBrowserExtentions.cs" />

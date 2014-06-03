@@ -45,6 +45,9 @@
     <Reference Include="Nancy">
       <HintPath>..\..\lib\Nancy.0.22.2\lib\net40\Nancy.dll</HintPath>
     </Reference>
+    <Reference Include="Nancy.Authentication.Stateless">
+      <HintPath>..\..\lib\Nancy.Authentication.Stateless.0.22.2\lib\net40\Nancy.Authentication.Stateless.dll</HintPath>
+    </Reference>
     <Reference Include="Nancy.Bootstrappers.Autofac">
       <HintPath>..\..\lib\Nancy.Bootstrappers.Autofac.0.22.2\lib\net40\Nancy.Bootstrappers.Autofac.dll</HintPath>
     </Reference>
@@ -202,6 +205,7 @@
     <Compile Include="Api\Infrastructure\Bootstraper.cs" />
     <Compile Include="Api\Modules\HomeModule.cs" />
     <Compile Include="Api\Modules\ProjectsModule.cs" />
+    <Compile Include="Api\Requests\ProfileRequest.cs" />
     <Compile Include="Api\Requests\ProjectRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

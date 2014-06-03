@@ -1,8 +1,11 @@
 using System;
 
+using Autofac;
+
 using CrowfoundingHn.Common.Bootstrapper;
 
 using Nancy;
+using Nancy.Bootstrapper;
 using Nancy.Conventions;
 
 namespace CrowfoundingHn.Presentation.Api.Infrastructure
@@ -15,9 +18,9 @@ namespace CrowfoundingHn.Presentation.Api.Infrastructure
             AddBootstrapperTask(new ConfigureProjectCommands());
             AddBootstrapperTask(new ConfigureProjectDependencies());
         }
-        protected override void RequestStartup(Autofac.ILifetimeScope container, Nancy.Bootstrapper.IPipelines pipelines, NancyContext context)
-        {
 
+        protected override void RequestStartup(ILifetimeScope container, IPipelines pipelines, NancyContext context)
+        {
             //pipelines.OnError += (ctx, err) => HandleExceptions(err, ctx);
 
             pipelines.AfterRequest.AddItemToEndOfPipeline(AddCorsHeaders());
@@ -29,22 +32,23 @@ namespace CrowfoundingHn.Presentation.Api.Infrastructure
         {
             if (ctx.Response == null)
             {
-                ctx.Response = new Response(){};
+                ctx.Response = new Response { };
                 AddCorsHeaders()(ctx);
             }
 
-            return ctx.Response;}
+            return ctx.Response;
+        }
 
         static Action<NancyContext> AddCorsHeaders()
         {
             return x =>
-            {
-                var response = x.Response;
-                response.WithHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-                response.WithHeader("Access-Control-Allow-Headers", "Content-Type, Accept");
-                response.WithHeader("Access-Control-Max-Age", "1728000");
-                response.WithHeader("Access-Control-Allow-Origin", "*");
-            };
+                {
+                    Response response = x.Response;
+                    response.WithHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+                    response.WithHeader("Access-Control-Allow-Headers", "Content-Type, Accept");
+                    response.WithHeader("Access-Control-Max-Age", "1728000");
+                    response.WithHeader("Access-Control-Allow-Origin", "*");
+                };
         }
 
         protected override void ConfigureConventions(NancyConventions conventions)
