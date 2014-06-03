@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication\Commands\CreateProfile.cs" />
+    <Compile Include="Authentication\IUserRepositiory.cs" />
     <Compile Include="AutoFacCommandDispatcher.cs" />
     <Compile Include="AutoFacDomainEventDispatcher.cs" />
     <Compile Include="ICommand.cs" />

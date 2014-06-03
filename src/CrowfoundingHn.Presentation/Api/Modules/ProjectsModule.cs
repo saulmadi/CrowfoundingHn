@@ -7,11 +7,12 @@ using Nancy.ModelBinding;
 
 namespace CrowfoundingHn.Presentation.Api.Modules
 {
-    public class ProjectsModule:NancyModule
+    public class ProjectsModule : NancyModule
     {
-        public ProjectsModule(ICommandDispatcher  commandDispatcher)
+        public ProjectsModule(ICommandDispatcher commandDispatcher)
+            : base("/projects")
         {
-            Post["/projects"] =x =>
+            Post["/"] = x =>
                 {
                     var request = this.Bind<ProjectRequest>();
 
@@ -27,7 +28,6 @@ namespace CrowfoundingHn.Presentation.Api.Modules
                     commandDispatcher.Dispatch(command);
                     return null;
                 };
-
         }
     }
 }
