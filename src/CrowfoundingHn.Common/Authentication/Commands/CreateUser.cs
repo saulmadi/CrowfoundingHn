@@ -1,12 +1,12 @@
 ﻿namespace CrowfoundingHn.Common.Authentication.Commands
 {
-    public class CreateProfile : ICommand
+    public class CreateUser : ICommand
     {
-        protected CreateProfile()
+        protected CreateUser()
         {
             
         }
-        public CreateProfile(
+        public CreateUser(
             string email, string password, string name, string ocuapation, string address, string phone)
         {
             Phone = phone;

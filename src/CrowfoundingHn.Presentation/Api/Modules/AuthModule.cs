@@ -14,16 +14,17 @@ namespace CrowfoundingHn.Presentation.Api.Modules
         {
             Post["/create"] = x =>
                 {
-                    var request = this.Bind<ProfileRequest>();
+                    var request = this.Bind<UserRequest>();
 
                     commandDispatcher.Dispatch(
-                        new CreateProfile(
+                        new CreateUser(
                             request.Email,
                             request.Password,
                             request.Name,
                             request.Ocuapation,
                             request.Address,
                             request.Phone));
+
                     return null;
                 };
         }

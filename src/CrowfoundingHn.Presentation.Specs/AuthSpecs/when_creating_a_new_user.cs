@@ -27,9 +27,9 @@ namespace CrowfoundingHn.Presentation.Specs.AuthSpecs
 
         static IUserRepositiory _userRepository;
 
-        static ProfileRequest _profileRequest;
+        static UserRequest _userRequest;
 
-        static CreateProfile _excpectedCommand;
+        static CreateUser _excpectedCommand;
 
         static BrowserResponse _response;
 
@@ -44,7 +44,7 @@ namespace CrowfoundingHn.Presentation.Specs.AuthSpecs
                             x.Dependency(_commandDisptacher);
                         });
 
-                _profileRequest = new ProfileRequest
+                _userRequest = new UserRequest
                                       {
                                           Email = "test@test.com",
                                           Password = "Password",
@@ -55,17 +55,17 @@ namespace CrowfoundingHn.Presentation.Specs.AuthSpecs
                                       };
 
                 _excpectedCommand =
-                    Builder<CreateProfile>.CreateNew()
-                                          .With(profile => profile.Name, _profileRequest.Name)
-                                          .With(profile => profile.Address, _profileRequest.Address)
-                                          .With(profile => profile.Email, _profileRequest.Email)
-                                          .With(profile => profile.Password, _profileRequest.Password)
-                                          .With(profile => profile.Ocuapation, _profileRequest.Ocuapation)
-                                          .With(profile => profile.Phone, _profileRequest.Phone)
+                    Builder<CreateUser>.CreateNew()
+                                          .With(profile => profile.Name, _userRequest.Name)
+                                          .With(profile => profile.Address, _userRequest.Address)
+                                          .With(profile => profile.Email, _userRequest.Email)
+                                          .With(profile => profile.Password, _userRequest.Password)
+                                          .With(profile => profile.Ocuapation, _userRequest.Ocuapation)
+                                          .With(profile => profile.Phone, _userRequest.Phone)
                                           .Build();
             };
 
-        Because of = () => _response = _browser.PostSecureJson("/auth/create", _profileRequest);
+        Because of = () => _response = _browser.PostSecureJson("/auth/create", _userRequest);
 
         It should_dispatch_create_user_command =
             () =>

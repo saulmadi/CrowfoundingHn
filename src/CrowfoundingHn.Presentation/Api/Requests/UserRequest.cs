@@ -1,6 +1,6 @@
 ﻿namespace CrowfoundingHn.Presentation.Api.Requests
 {
-    public class ProfileRequest
+    public class UserRequest
     {
         public string Email { get; set; }
 
