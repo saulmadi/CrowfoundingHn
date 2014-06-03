@@ -67,10 +67,11 @@ namespace CrowfoundingHn.Presentation.Specs.AuthSpecs
 
         Because of = () => _response = _browser.PostSecureJson("/auth/create", _profileRequest);
 
-        It should_return_200_status = () => _response.StatusCode.ShouldEqual(HttpStatusCode.OK);
         It should_dispatch_create_user_command =
             () =>
             Mock.Get(_commandDisptacher)
                 .Verify(dispatcher => dispatcher.Dispatch(WithExpected.Object(_excpectedCommand)));
+
+        It should_return_200_status = () => _response.StatusCode.ShouldEqual(HttpStatusCode.OK);
     }
 }
