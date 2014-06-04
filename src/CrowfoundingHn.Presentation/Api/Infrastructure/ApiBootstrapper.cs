@@ -3,6 +3,7 @@ using System;
 using Autofac;
 
 using CrowfoundingHn.Common.Bootstrapper;
+using CrowfoundingHn.Common.Bootstrapper.Authentication;
 using CrowfoundingHn.Common.Bootstrapper.Project;
 
 using Nancy;
@@ -16,8 +17,12 @@ namespace CrowfoundingHn.Presentation.Api.Infrastructure
         public ApiBootstrapper()
         {
             AddBootstrapperTask(new ConfigureCommonDependencies());
+            
             AddBootstrapperTask(new ConfigureProjectCommands());
             AddBootstrapperTask(new ConfigureProjectDependencies());
+
+            AddBootstrapperTask(new ConfigureAuthenticationCommands());
+            AddBootstrapperTask(new ConfigureAuthenticationDependencies());
         }
 
         protected override void RequestStartup(ILifetimeScope container, IPipelines pipelines, NancyContext context)

@@ -212,9 +212,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="connectionString.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Assets\bower_components\angular\.bower.json" />
     <Content Include="Assets\bower_components\angular\angular.min.js.gzip" />
     <Content Include="Assets\bower_components\angular\angular.min.js.map" />
@@ -288,6 +285,9 @@
     <Content Include="Assets\bower_components\jquery\bower.json" />
     <Content Include="Assets\bower_components\jquery\dist\jquery.min.map" />
     <Content Include="Assets\bower_components\jquery\src\sizzle\dist\sizzle.min.map" />
+    <Content Include="connectionString.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
