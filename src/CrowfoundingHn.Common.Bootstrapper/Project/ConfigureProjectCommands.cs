@@ -5,7 +5,7 @@ using Autofac;
 using CrowfoundingHn.Projects.Application.CommandHandlers;
 using CrowfoundingHn.Projects.Application.Commands;
 
-namespace CrowfoundingHn.Common.Bootstrapper
+namespace CrowfoundingHn.Common.Bootstrapper.Project
 {
     public class ConfigureProjectCommands:IBootstrapperTask<ContainerBuilder>
     {

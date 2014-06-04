@@ -3,6 +3,7 @@ using System;
 using Autofac;
 
 using CrowfoundingHn.Common.Bootstrapper;
+using CrowfoundingHn.Common.Bootstrapper.Project;
 
 using Nancy;
 using Nancy.Bootstrapper;

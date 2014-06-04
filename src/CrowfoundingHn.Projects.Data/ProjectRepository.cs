@@ -1,24 +1,16 @@
-﻿using CrowfoundingHn.Projects.Domain;
+﻿using CrowfoundingHn.Common.Data;
+using CrowfoundingHn.Projects.Domain;
 
 using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace CrowfoundingHn.Projects.Data
 {
-    public class ProjectRepository:IProjectRepository
+    public class ProjectRepository: MongoRepository<Project>, IProjectRepository
     {
-        readonly MongoCollection _collection;
-
-        public ProjectRepository(MongoCollection collection)
+        public ProjectRepository(MongoCollection collection):base(collection)
         {
-            _collection = collection;
-        }
-
-        public Project Create(Project project)
-        {
-             _collection.Insert(project);
             
-            return project;
         }
     }
 }

@@ -1,12 +1,11 @@
 using System;
 
 using Autofac;
-using Autofac.Core;
 
 using CrowfoundingHn.Projects.Data;
 using CrowfoundingHn.Projects.Domain;
 
-namespace CrowfoundingHn.Common.Bootstrapper
+namespace CrowfoundingHn.Common.Bootstrapper.Project
 {
     public class ConfigureProjectDependencies:IBootstrapperTask<ContainerBuilder>
     {
