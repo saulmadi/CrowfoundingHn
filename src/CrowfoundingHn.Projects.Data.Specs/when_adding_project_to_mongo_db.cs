@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Configuration;
 
+using AcklenAvenue.Testing.ExpectedObjects;
+
 using CrowfoundingHn.Projects.Domain;
 
 using FizzWare.NBuilder;
@@ -36,6 +38,6 @@ namespace CrowfoundingHn.Projects.Data.Specs
         Because of = () => _projectRepository.Create(_expectedProject);
 
         It should_insert_the_new_project =
-            () => _collection.FindOneByIdAs<Project>(_expectedProject.Id).ShouldBeLike(_expectedProject);
+            () => _collection.FindOneByIdAs<Project>(_expectedProject.Id).IsExpectedToBeSimilar(_expectedProject);
     }
 }
