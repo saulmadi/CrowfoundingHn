@@ -60,7 +60,7 @@ namespace CrowfoundingHn.Presentation.Specs.AuthSpecs
                                           .With(profile => profile.Address, _userRequest.Address)
                                           .With(profile => profile.Email, _userRequest.Email)
                                           .With(profile => profile.Password, _userRequest.Password)
-                                          .With(profile => profile.Ocuapation, _userRequest.Ocuapation)
+                                          .With(profile => profile.Ocupation, _userRequest.Ocuapation)
                                           .With(profile => profile.Phone, _userRequest.Phone)
                                           .Build();
             };

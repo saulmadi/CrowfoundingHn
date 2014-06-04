@@ -11,7 +11,7 @@
         {
             Phone = phone;
             Address = address;
-            Ocuapation = ocuapation;
+            Ocupation = ocuapation;
             Name = name;
             Password = password;
             Email = email;
@@ -23,7 +23,7 @@
 
         public string Name { get; private set; }
 
-        public string Ocuapation { get; private set; }
+        public string Ocupation { get; private set; }
 
         public string Address { get; private set; }
 
