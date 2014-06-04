@@ -16,6 +16,10 @@ namespace CrowfoundingHn.Common.Authentication
 
         public EncryptedPassword EncryptPassword(string password)
         {
+            if (password == null)
+            {
+                return new EncryptedPassword(null);
+            }
             byte[] encryptedPassword = HashPassword(password);
             string base64String = Convert.ToBase64String(encryptedPassword);
             return new EncryptedPassword(base64String);   
