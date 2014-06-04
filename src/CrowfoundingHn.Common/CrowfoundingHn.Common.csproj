@@ -57,6 +57,7 @@
     <Compile Include="Authentication\Events\UserCreated.cs" />
     <Compile Include="Authentication\IPasswordEncryptor.cs" />
     <Compile Include="Authentication\IUserRepository.cs" />
+    <Compile Include="Authentication\MissingUserFieldException.cs" />
     <Compile Include="Authentication\User.cs" />
     <Compile Include="AutoFacCommandDispatcher.cs" />
     <Compile Include="AutoFacDomainEventDispatcher.cs" />

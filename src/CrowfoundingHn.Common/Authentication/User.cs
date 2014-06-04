@@ -10,6 +10,19 @@ namespace CrowfoundingHn.Common.Authentication
 
         public User(Guid id, string name, string email, string password)
         {
+            if (string.IsNullOrEmpty(name))
+            {
+                throw new MissingUserFieldException("name");
+            }
+            if (string.IsNullOrEmpty(password))
+            {
+                throw new MissingUserFieldException("password");
+            }
+            if (string.IsNullOrEmpty(email))
+            {
+                throw new MissingUserFieldException("email");
+            }
+
             Id = id;
             EncryptedPassword = password;
             Email = email;
