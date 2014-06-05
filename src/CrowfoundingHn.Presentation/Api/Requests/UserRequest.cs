@@ -8,7 +8,7 @@
 
         public string Name { get; set; }
 
-        public string Ocuapation { get; set; }
+        public string Ocupation { get; set; }
 
         public string Address { get; set; }
 

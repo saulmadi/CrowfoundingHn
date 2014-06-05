@@ -1,29 +1,40 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="crowfoundingHn">
-<head>
-    <title>Crowdfounding</title>
-    <link href="../Assets/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    
-    
+    <head>
+        <title>Crowdfounding</title>
+        <link href="../Assets/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+     
+        <!--<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">-->
 
-    <script src="../Assets/bower_components/angular/angular.js"></script>
-    <script src="../Assets/bower_components/angular-route/angular-route.js"></script>
-    <script src="../Assets/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
-    <script src="../Assets/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-</head>
-<body>
-    <div ng-view class="container">
+        <link href="../Assets/main.css" rel="stylesheet" />
+
+        <script src="../Assets/bower_components/angular/angular.js"> </script>
+        <script src="../Assets/bower_components/angular-route/angular-route.js"> </script>
+        <script src="../Assets/bower_components/angular-bootstrap/ui-bootstrap.js"> </script>
+        <script src="../Assets/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"> </script>
+    </head>
+    <body>
+        <div  class="container top-buffer">
+           
         
-
-    </div>
-
-    <script src="../App/Config.js"></script>
+            <div class="row">
+                <div class="col-md-8"></div>
+                <div class="col-md-4">
+       
+                </div>
     
-    <!-- controllers -->
-    <script src="../App/Controller/ProjectController.js"></script>
-    <!-- services -->
-    <script src="../App/Services/ProjectService.js"></script>
+            </div>
+            <div ng-view></div>
+        </div>
 
-</body>
+        <script src="../App/Config.js"> </script>
+    
+        <!-- controllers -->
+        <script src="../App/Controller/ProjectController.js"> </script>
+        <script src="../App/Controller/LoginController.js"> </script>
+        <!-- services -->
+        <script src="../App/Services/ProjectService.js"> </script>
+
+    </body>
 
 </html>

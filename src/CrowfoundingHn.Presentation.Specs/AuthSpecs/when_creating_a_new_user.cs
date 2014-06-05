@@ -49,7 +49,7 @@ namespace CrowfoundingHn.Presentation.Specs.AuthSpecs
                                           Email = "test@test.com",
                                           Password = "Password",
                                           Name = "Test Name",
-                                          Ocuapation = "Ocupation",
+                                          Ocupation = "Ocupation",
                                           Address = "Addres",
                                           Phone = "504-1234444"
                                       };
@@ -60,7 +60,7 @@ namespace CrowfoundingHn.Presentation.Specs.AuthSpecs
                                           .With(profile => profile.Address, _userRequest.Address)
                                           .With(profile => profile.Email, _userRequest.Email)
                                           .With(profile => profile.Password, _userRequest.Password)
-                                          .With(profile => profile.Ocupation, _userRequest.Ocuapation)
+                                          .With(profile => profile.Ocupation, _userRequest.Ocupation)
                                           .With(profile => profile.Phone, _userRequest.Phone)
                                           .Build();
             };

@@ -8,5 +8,9 @@ app.config(function ($routeProvider) {
         .when("/projects", {
             templateUrl: 'App/Views/project.html',
             controller: "ProjectController"
+        })
+        .when("/login", {
+            templateUrl: 'App/Views/login.html',
+            controller: "LoginController"
         });
 })

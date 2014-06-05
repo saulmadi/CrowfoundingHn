@@ -21,7 +21,7 @@ namespace CrowfoundingHn.Presentation.Api.Modules
                             request.Email,
                             request.Password,
                             request.Name,
-                            request.Ocuapation,
+                            request.Ocupation,
                             request.Address,
                             request.Phone));
 
