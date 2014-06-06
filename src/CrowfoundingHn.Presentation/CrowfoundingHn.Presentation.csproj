@@ -75,9 +75,10 @@
     <Content Include="App\Config.js" />
     <Content Include="App\Controller\LoginController.js" />
     <Content Include="App\Controller\ProjectController.js" />
+    <Content Include="App\Services\LoginService.js" />
     <Content Include="App\Services\ProjectService.js" />
     <Content Include="App\Views\home.html" />
-    <Content Include="App\Views\login.html" />
+    <Content Include="App\Views\register.html" />
     <Content Include="App\Views\project.html" />
     <Content Include="Assets\bower_components\angular-bootstrap\ui-bootstrap-tpls.js" />
     <Content Include="Assets\bower_components\angular-bootstrap\ui-bootstrap-tpls.min.js" />
