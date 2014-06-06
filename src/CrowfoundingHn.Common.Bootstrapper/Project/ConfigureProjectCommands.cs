@@ -5,7 +5,7 @@ using Autofac;
 using CrowfoundingHn.Projects.Application.CommandHandlers;
 using CrowfoundingHn.Projects.Application.Commands;
 
-namespace CrowfoundingHn.Common.Bootstrapper
+namespace CrowfoundingHn.Common.Bootstrapper.Project
 {
     public class ConfigureProjectCommands:IBootstrapperTask<ContainerBuilder>
     {
@@ -18,7 +18,7 @@ namespace CrowfoundingHn.Common.Bootstrapper
                         var projectAssembly = typeof(CreateProject).Assembly;
 
                         builder.RegisterAssemblyTypes(projectAssembly)
-                               .Where(type => typeof(CreateProjectHandler).Namespace.EndsWith(type.Namespace))
+                               .Where(type => typeof(CreateProjectCreator).Namespace.EndsWith(type.Namespace))
                                .AsImplementedInterfaces();
 
                     };

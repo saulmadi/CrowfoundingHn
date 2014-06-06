@@ -33,6 +33,7 @@
     <Reference Include="Autofac">
       <HintPath>..\..\lib\Autofac.3.4.0\lib\net40\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MongoDB.Bson">
       <HintPath>..\..\lib\mongocsharpdriver.1.9.1\lib\net35\MongoDB.Bson.dll</HintPath>
     </Reference>
@@ -50,6 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication\CommandHandlers\UserCreator.cs" />
+    <Compile Include="Authentication\Commands\CreateUser.cs" />
+    <Compile Include="Authentication\EncryptedPassword.cs" />
+    <Compile Include="Authentication\Events\UserCreated.cs" />
+    <Compile Include="Authentication\IPasswordEncryptor.cs" />
+    <Compile Include="Authentication\IUserRepository.cs" />
+    <Compile Include="Authentication\MissingUserFieldException.cs" />
+    <Compile Include="Authentication\PasswordEncryptor.cs" />
+    <Compile Include="Authentication\User.cs" />
     <Compile Include="AutoFacCommandDispatcher.cs" />
     <Compile Include="AutoFacDomainEventDispatcher.cs" />
     <Compile Include="ICommand.cs" />

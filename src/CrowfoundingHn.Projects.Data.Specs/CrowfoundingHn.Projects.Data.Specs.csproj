@@ -30,6 +30,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AcklenAvenue.Testing">
+      <HintPath>..\..\lib\AcklenAvenue.Testing.1.0.0.0\lib\net40\AcklenAvenue.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="AcklenAvenue.Testing.ExpectedObjects">
+      <HintPath>..\..\lib\AcklenAvenue.Testing.ExpectedObjects.1.2.0.0\lib\net40\AcklenAvenue.Testing.ExpectedObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="ExpectedObjects">
+      <HintPath>..\..\lib\ExpectedObjects.1.1.1\lib\net40\ExpectedObjects.dll</HintPath>
+    </Reference>
     <Reference Include="FizzWare.NBuilder">
       <HintPath>..\..\lib\NBuilder.3.0.1.1\lib\FizzWare.NBuilder.dll</HintPath>
     </Reference>
@@ -74,6 +83,10 @@
     <ProjectReference Include="..\CrowfoundingHn.Application.Projects\CrowfoundingHn.Projects.csproj">
       <Project>{993D1ABD-E87A-4695-A7B3-93A6DD6D7036}</Project>
       <Name>CrowfoundingHn.Projects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrowfoundingHn.Common.Data\CrowfoundingHn.Common.Data.csproj">
+      <Project>{130158C3-4839-4083-A9DF-CB415F20D656}</Project>
+      <Name>CrowfoundingHn.Common.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\CrowfoundingHn.Common\CrowfoundingHn.Common.csproj">
       <Project>{B0D3E75C-BBFC-4C30-9F4A-4DB57C9E70E4}</Project>

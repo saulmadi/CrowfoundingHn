@@ -48,10 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication\ConfigureAuthenticationCommands.cs" />
+    <Compile Include="Authentication\ConfigureAuthenticationDependencies.cs" />
     <Compile Include="ConfigureCommonDependencies.cs" />
-    <Compile Include="ConfigureProjectCommands.cs" />
-    <Compile Include="ConfigureProjectDependencies.cs" />
     <Compile Include="IBootstrapperTask.cs" />
+    <Compile Include="Project\ConfigureProjectCommands.cs" />
+    <Compile Include="Project\ConfigureProjectDependencies.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +63,10 @@
     <ProjectReference Include="..\CrowfoundingHn.Application.Projects\CrowfoundingHn.Projects.csproj">
       <Project>{993D1ABD-E87A-4695-A7B3-93A6DD6D7036}</Project>
       <Name>CrowfoundingHn.Projects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrowfoundingHn.Common.Data\CrowfoundingHn.Common.Data.csproj">
+      <Project>{130158C3-4839-4083-A9DF-CB415F20D656}</Project>
+      <Name>CrowfoundingHn.Common.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\CrowfoundingHn.Common\CrowfoundingHn.Common.csproj">
       <Project>{B0D3E75C-BBFC-4C30-9F4A-4DB57C9E70E4}</Project>

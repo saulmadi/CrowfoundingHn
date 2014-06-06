@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
   <connectionStrings>
     <add name="ProjectDb" connectionString="mongodb://appharbor_d9460ce8-eb54-4149-b66d-f978d0fcd7c4:917rstqo5tv21e65qkelkcqrv5@ds043388.mongolab.com:43388/appharbor_d9460ce8-eb54-4149-b66d-f978d0fcd7c4"/>
+    <add name="UserDb" connectionString="mongodb://appharbor_d9460ce8-eb54-4149-b66d-f978d0fcd7c4:917rstqo5tv21e65qkelkcqrv5@ds043388.mongolab.com:43388/appharbor_d9460ce8-eb54-4149-b66d-f978d0fcd7c4"/>
   </connectionStrings>

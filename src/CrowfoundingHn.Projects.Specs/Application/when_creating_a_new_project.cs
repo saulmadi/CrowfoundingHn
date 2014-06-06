@@ -21,7 +21,7 @@ namespace CrowfoundingHn.Projects.Specs.Application
 {
     public class when_creating_a_new_project
     {
-        static CreateProjectHandler _commandHandler;
+        static CreateProjectCreator _commandCreator;
 
         static IProjectRepository _projectRepository;
 
@@ -37,7 +37,7 @@ namespace CrowfoundingHn.Projects.Specs.Application
             {
                 _projectRepository = Mock.Of<IProjectRepository>();
                 _domainEvents = Mock.Of<IDomainEvent>();
-                _commandHandler = new CreateProjectHandler(_projectRepository, _domainEvents);
+                _commandCreator = new CreateProjectCreator(_projectRepository, _domainEvents);
 
                 _createProject =
                     Builder<CreateProject>.CreateNew()
@@ -64,7 +64,7 @@ namespace CrowfoundingHn.Projects.Specs.Application
                 _expectedEProjectCreated = new ProjectCreated(_expectedProject);
             };
 
-        Because of = () => _commandHandler.Handle(_createProject);
+        Because of = () => _commandCreator.Handle(_createProject);
 
         It should_create_the_new_project =
             () =>

@@ -5,13 +5,13 @@ using CrowfoundingHn.Projects.Domain;
 
 namespace CrowfoundingHn.Projects.Application.CommandHandlers
 {
-    public class CreateProjectHandler:ICommandHandler<CreateProject>
+    public class CreateProjectCreator:ICommandHandler<CreateProject>
     {
         readonly IProjectRepository _projectRepository;
 
         readonly IDomainEvent _domainEvents;
 
-        public CreateProjectHandler(IProjectRepository projectRepository, IDomainEvent domainEvents)
+        public CreateProjectCreator(IProjectRepository projectRepository, IDomainEvent domainEvents)
         {
             _projectRepository = projectRepository;
             _domainEvents = domainEvents;

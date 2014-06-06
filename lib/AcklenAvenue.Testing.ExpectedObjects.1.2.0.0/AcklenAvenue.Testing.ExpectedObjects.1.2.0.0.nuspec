@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>AcklenAvenue.Testing.ExpectedObjects</id>
+    <version>1.2.0.0</version>
+    <title>AcklenAvenue.Testing.ExpectedObjects</title>
+    <authors>Acklen Avenue</authors>
+    <owners>Acklen Avenue</owners>
+    <licenseUrl>http://license_url_here_or_delete_this_line/</licenseUrl>
+    <projectUrl>http://project_url_here_or_delete_this_line/</projectUrl>
+    <iconUrl>http://icon_url_here_or_delete_this_line/</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Extensions for ExpectedObjects library.</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright 2013 Acklen Avenue, LLC</copyright>
+    <tags>Testing</tags>
+    <dependencies>
+      <dependency id="ExpectedObjects" />
+      <dependency id="AcklenAvenue.Testing" />
+    </dependencies>
+  </metadata>
+</package>
