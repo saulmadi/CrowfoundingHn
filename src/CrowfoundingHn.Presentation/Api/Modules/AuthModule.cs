@@ -32,7 +32,7 @@ namespace CrowfoundingHn.Presentation.Api.Modules
                     return null;
                 };
 
-            Post["/singin"] = x =>
+            Post["/signin"] = x =>
                 {
                     var request = this.Bind<UserSessionRequest>();
 
