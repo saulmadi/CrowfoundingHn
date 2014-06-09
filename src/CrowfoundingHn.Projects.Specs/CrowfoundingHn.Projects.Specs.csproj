@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AcklenAvenue.Testing.Moq">
+      <HintPath>..\..\lib\AcklenAvenue.Testing.Moq.1.0.3.0\lib\net40\AcklenAvenue.Testing.Moq.dll</HintPath>
+    </Reference>
     <Reference Include="AcklenAvenue.Testing.Moq.ExpectedObjects">
       <HintPath>..\..\lib\AcklenAvenue.Testing.Moq.ExpectedObjects.1.0.1.3\lib\net40\AcklenAvenue.Testing.Moq.ExpectedObjects.dll</HintPath>
     </Reference>
