@@ -34,5 +34,11 @@ namespace CrowfoundingHn.Common.Data
             }
             return entity;
         }
+
+        public TEntity GetById(Guid id)
+        {
+
+            return _collection.FindOneByIdAs<TEntity>(id);
+        }
     }
 }

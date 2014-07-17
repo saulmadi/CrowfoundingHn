@@ -58,6 +58,7 @@
     <Compile Include="Authentication\EncryptedPassword.cs" />
     <Compile Include="Authentication\Events\UserCreated.cs" />
     <Compile Include="Authentication\IPasswordEncryptor.cs" />
+    <Compile Include="Authentication\ISessionExpirationDateFactory.cs" />
     <Compile Include="Authentication\IUserRepository.cs" />
     <Compile Include="Authentication\IUserSessionRepository.cs" />
     <Compile Include="Authentication\MissingUserFieldException.cs" />

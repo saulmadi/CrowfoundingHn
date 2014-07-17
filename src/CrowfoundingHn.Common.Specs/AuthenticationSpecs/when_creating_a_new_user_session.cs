@@ -34,25 +34,37 @@ namespace CrowfoundingHn.Common.Specs.AuthenticationSpecs
 
         static DateTime _startDate;
 
+        static ISessionExpirationDateFactory _sessionExpirationDateFactory;
+
+        static DateTime _expirationDate;
+
         Establish context = () =>
             {
                 _domainEvent = Mock.Of<IDomainEvent>();
                 _userSessionRepository = Mock.Of<IUserSessionRepository>();
 
                 _userRepository = Mock.Of<IUserRepository>();
-                _handler = new UserSessionCreator(_userRepository, _userSessionRepository, _domainEvent);
+                _sessionExpirationDateFactory = Mock.Of<ISessionExpirationDateFactory>();
+                _handler = new UserSessionCreator(
+                    _userRepository, _userSessionRepository, _sessionExpirationDateFactory, _domainEvent);
 
                 _command = Builder<CreateUserSession>.CreateNew().Build();
                 _user = Builder<User>.CreateNew().Build();
                 _startDate = DateTime.Now;
-
+                _expirationDate = _startDate.AddDays(6);
                 SystemDateTime.Now = () => _startDate;
 
+                Mock.Get(_userRepository).Setup(repository => repository.GetById(_command.UserId)).Returns(_user);
+                Mock.Get(_sessionExpirationDateFactory)
+                    .Setup(factory => factory.Create(_startDate))
+                    .Returns(_expirationDate);
+                 
                 _expecteUserSession =
                     Builder<UserSession>.CreateNew()
                                         .With(session => session.User, _user)
                                         .With(session => session.Id, _command.Id)
                                         .With(session => session.StartDate, _startDate)
+                                        .With(session => session.ExpirationDate, _expirationDate)
                                         .Build();
             };
 

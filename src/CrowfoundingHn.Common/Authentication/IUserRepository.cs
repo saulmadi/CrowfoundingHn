@@ -1,4 +1,6 @@
-﻿namespace CrowfoundingHn.Common.Authentication
+﻿using System;
+
+namespace CrowfoundingHn.Common.Authentication
 {
     public interface IUserRepository : IRepository<User>
     {
