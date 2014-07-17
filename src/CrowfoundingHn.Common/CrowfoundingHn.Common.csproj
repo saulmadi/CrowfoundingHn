@@ -52,15 +52,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Authentication\CommandHandlers\UserCreator.cs" />
+    <Compile Include="Authentication\CommandHandlers\UserSessionCreator.cs" />
     <Compile Include="Authentication\Commands\CreateUser.cs" />
     <Compile Include="Authentication\Commands\CreateUserSession.cs" />
     <Compile Include="Authentication\EncryptedPassword.cs" />
     <Compile Include="Authentication\Events\UserCreated.cs" />
     <Compile Include="Authentication\IPasswordEncryptor.cs" />
     <Compile Include="Authentication\IUserRepository.cs" />
+    <Compile Include="Authentication\IUserSessionRepository.cs" />
     <Compile Include="Authentication\MissingUserFieldException.cs" />
     <Compile Include="Authentication\PasswordEncryptor.cs" />
     <Compile Include="Authentication\User.cs" />
+    <Compile Include="Authentication\UserSession.cs" />
     <Compile Include="AutoFacCommandDispatcher.cs" />
     <Compile Include="AutoFacDomainEventDispatcher.cs" />
     <Compile Include="EntityNotFoundException.cs" />
@@ -71,9 +74,11 @@
     <Compile Include="IEntity.cs" />
     <Compile Include="IEvent.cs" />
     <Compile Include="IEventHandler.cs" />
+    <Compile Include="IMongoCollectionFactory.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="MongoCollectionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemDateTime.cs" />
     <Compile Include="SystemGuid.cs" />
   </ItemGroup>
   <ItemGroup>

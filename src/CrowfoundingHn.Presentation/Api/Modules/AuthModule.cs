@@ -13,7 +13,8 @@ namespace CrowfoundingHn.Presentation.Api.Modules
 {
     public class AuthModule : NancyModule
     {
-        public AuthModule(ICommandDispatcher commandDispatcher,IUserRepository userRepository, IPasswordEncryptor passwordEncryptor)
+        public AuthModule(
+            ICommandDispatcher commandDispatcher, IUserRepository userRepository, IPasswordEncryptor passwordEncryptor)
             : base("/auth")
         {
             Post["/create"] = x =>
@@ -34,22 +35,27 @@ namespace CrowfoundingHn.Presentation.Api.Modules
 
             Post["/signin"] = x =>
                 {
-                    var request = this.Bind<UserSessionRequest>();
+                    try
+                    {
+                        var request = this.Bind<UserSessionRequest>();
 
-                    var token = SystemGuid.New();
-                    var encryptedPassord = passwordEncryptor.EncryptPassword(request.Password);
-                    
-                        var userForSesion =
-                       userRepository.First(
-                           user => user.Email == request.Email && user.EncryptedPassword == encryptedPassord.Password);
+                        Guid token = SystemGuid.New();
+                        EncryptedPassword encryptedPassord = passwordEncryptor.EncryptPassword(request.Password);
+
+                        User userForSesion =
+                            userRepository.First(
+                                user =>
+                                user.Email == request.Email && user.EncryptedPassword == encryptedPassord.Password);
 
                         commandDispatcher.Dispatch(new CreateUserSession(token, userForSesion.Id));
 
                         return new TokenResponse { Token = token };
-                    
-                   
+                    }
+                    catch (EntityNotFoundException<User>)
+                    {
+                        throw new UnauthorizedAccessException();
+                    }
                 };
-
         }
     }
 }

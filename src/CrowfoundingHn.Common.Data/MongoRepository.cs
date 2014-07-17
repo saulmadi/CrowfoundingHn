@@ -18,11 +18,11 @@ namespace CrowfoundingHn.Common.Data
             _collection = collection;
         }
 
-        public TEntity Create(TEntity project)
+        public TEntity Create(TEntity entity)
         {
-            _collection.Insert(project);
+            _collection.Insert(entity);
             
-            return project;
+            return entity;
         }
 
         public TEntity First(Expression<Func<TEntity, bool>> query)
