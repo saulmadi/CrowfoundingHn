@@ -63,6 +63,7 @@
     <Compile Include="Authentication\IUserSessionRepository.cs" />
     <Compile Include="Authentication\MissingUserFieldException.cs" />
     <Compile Include="Authentication\PasswordEncryptor.cs" />
+    <Compile Include="Authentication\SessionExpirationDateFactory.cs" />
     <Compile Include="Authentication\User.cs" />
     <Compile Include="Authentication\UserSession.cs" />
     <Compile Include="AutoFacCommandDispatcher.cs" />

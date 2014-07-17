@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 
 using Autofac;
 
@@ -20,10 +21,27 @@ namespace CrowfoundingHn.Common.Bootstrapper.Authentication
                         builder.Register(
                             context =>
                                 {
+                                    var durationDays = Convert.ToInt32(ConfigurationManager.AppSettings["SessionDurationDays"]);
+                                    return new SessionExpirationDateFactory(durationDays);
+                                }).As<ISessionExpirationDateFactory>();
+
+                        builder.Register(
+                            context =>
+                                {
                                     var mongocollectionFactory =
                                         context.Resolve<IMongoCollectionFactory>(new NamedParameter("key", "UserDb"));
                                     return new UserRepository(mongocollectionFactory.CreateCollection("Users"));
                                 }).As<IUserRepository>();
+
+                        builder.Register(
+                            context =>
+                                {
+                                    var mongocollectionFactory =
+                                        context.Resolve<IMongoCollectionFactory>(new NamedParameter("key", "UserDb"));
+                                    return
+                                        new UserSessionRepository(
+                                            mongocollectionFactory.CreateCollection("UserSessions"));
+                                }).As<IUserSessionRepository>();
                     };
             }
         }
