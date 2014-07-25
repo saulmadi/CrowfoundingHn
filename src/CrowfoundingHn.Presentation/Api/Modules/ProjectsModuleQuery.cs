@@ -15,7 +15,7 @@ namespace CrowfoundingHn.Presentation.Api.Modules
             Get["/{id:guid}"] = parameters =>
             {
                 var project = repository.Get(parameters.id);
-                return getProjectResponse(project);
+                return project == null ? null : getProjectResponse(project);
             };
 
        
