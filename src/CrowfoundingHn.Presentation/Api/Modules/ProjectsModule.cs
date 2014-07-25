@@ -23,11 +23,13 @@ namespace CrowfoundingHn.Presentation.Api.Modules
                         request.ImagesUrls,
                         request.VideosUrls,
                         request.TargetAmount,
-                        request.PredefinedAmounts);
+                        request.PredefinedAmounts,
+                        request.DeadLine);
 
                     commandDispatcher.Dispatch(command);
                     return null;
                 };
+            
         }
     }
 }

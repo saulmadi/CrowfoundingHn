@@ -45,7 +45,8 @@ namespace CrowfoundingHn.Presentation.Specs.ProjectSpecs
                     _projectRequest.ImagesUrls,
                     _projectRequest.VideosUrls,
                     _projectRequest.TargetAmount,
-                    _projectRequest.PredefinedAmounts);
+                    _projectRequest.PredefinedAmounts,
+                    _projectRequest.DeadLine);
             };
 
         Because of = () => _browser.PostSecureJson("/projects", _projectRequest);

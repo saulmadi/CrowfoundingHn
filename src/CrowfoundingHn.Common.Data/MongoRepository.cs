@@ -1,4 +1,7 @@
-﻿using MongoDB.Driver;
+﻿using System;
+using System.Linq;
+using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 
 namespace CrowfoundingHn.Common.Data
 {
@@ -18,6 +21,11 @@ namespace CrowfoundingHn.Common.Data
             _collection.Insert(project);
             
             return project;
+        }
+
+        public TEntity Get(Guid id)
+        {
+            return _collection.FindOneByIdAs<TEntity>(id);
         }
     }
 }

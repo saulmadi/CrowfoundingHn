@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
-namespace CrowfoundingHn.Presentation.Api.Requests
+namespace CrowfoundingHn.Presentation.Api.Responses
 {
-    public class ProjectRequest
+    public class ProjectResponse
     {
-        public ProjectRequest()
-        {
-            ImagesUrls =new List<string>();
-            PredefinedAmounts = new List<double>();
-            VideosUrls = new List<string>();
-        }
         public string Name { get; set; }
 
         public string Abstract { get; set; }
@@ -27,7 +23,17 @@ namespace CrowfoundingHn.Presentation.Api.Requests
 
         public IEnumerable<Double> PredefinedAmounts { get; set; }
 
+        public Guid IdGuid { get; set; }
 
-        
+        public string projectState { get; set; }
+
+        public ProjectResponse()
+        {
+            ImagesUrls = new List<string>();
+            PredefinedAmounts = new List<double>();
+            VideosUrls = new List<string>();
+            PredefinedAmounts = new List<Double>();
+        }
+
     }
 }

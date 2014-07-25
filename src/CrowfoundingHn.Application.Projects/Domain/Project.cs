@@ -32,6 +32,8 @@ namespace CrowfoundingHn.Projects.Domain
 
         public string Description { get; private set; }
 
+        public DateTime DeadLine { get; private set; }
+
         public IEnumerable<string> ImageUrls
         {
             get
@@ -82,6 +84,11 @@ namespace CrowfoundingHn.Projects.Domain
             {
                 _state = value;
             }
+        }
+
+        public void SetDeadLine(DateTime deadline)
+        {
+            DeadLine = deadline;
         }
 
         public void SetAbstract(string @abstract)

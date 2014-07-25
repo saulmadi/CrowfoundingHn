@@ -210,8 +210,10 @@
     <Compile Include="Api\Modules\AuthModule.cs" />
     <Compile Include="Api\Modules\HomeModule.cs" />
     <Compile Include="Api\Modules\ProjectsModule.cs" />
+    <Compile Include="Api\Modules\ProjectsModuleQuery.cs" />
     <Compile Include="Api\Requests\UserRequest.cs" />
     <Compile Include="Api\Requests\ProjectRequest.cs" />
+    <Compile Include="Api\Responses\ProjectResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -300,7 +302,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Api\Responses\" />
     <Folder Include="App\Directives\" />
   </ItemGroup>
   <ItemGroup>

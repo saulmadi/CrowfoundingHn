@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AcklenAvenue.Testing">
+      <HintPath>..\..\lib\AcklenAvenue.Testing.1.0.0.0\lib\net40\AcklenAvenue.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="AcklenAvenue.Testing.ExpectedObjects">
+      <HintPath>..\..\lib\AcklenAvenue.Testing.ExpectedObjects.1.2.0.0\lib\net40\AcklenAvenue.Testing.ExpectedObjects.dll</HintPath>
+    </Reference>
     <Reference Include="AcklenAvenue.Testing.Moq.ExpectedObjects">
       <HintPath>..\..\lib\AcklenAvenue.Testing.Moq.ExpectedObjects.1.0.1.3\lib\net40\AcklenAvenue.Testing.Moq.ExpectedObjects.dll</HintPath>
     </Reference>
@@ -77,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthSpecs\when_creating_a_new_user.cs" />
+    <Compile Include="ProjectSpecs\when_get_a_existing_project.cs" />
     <Compile Include="ProjectSpecs\when_creating_a_project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecureBrowserExtentions.cs" />

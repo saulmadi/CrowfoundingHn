@@ -27,6 +27,7 @@ namespace CrowfoundingHn.Projects.Application.CommandHandlers
             project.SetPredefinedAmounts(command.PredefinedAmounts);
             project.SetImageUrls(command.ImagesUrls);
             project.SetVideoUrls(command.VideoUrls);
+            project.SetDeadLine(command.DeadLine);
             project.SetFirstState();
             
                 

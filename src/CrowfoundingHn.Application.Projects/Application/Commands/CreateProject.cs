@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 using CrowfoundingHn.Common;
@@ -17,7 +18,8 @@ namespace CrowfoundingHn.Projects.Application.Commands
             IEnumerable<string> imagesUrls,
             IEnumerable<string> videosUrls,
             double targetAmount,
-            IEnumerable<double> predefinedAmounts)
+            IEnumerable<double> predefinedAmounts,
+            DateTime deadLine)
         {
             Name = name;
             Abstract = @abstract;
@@ -26,8 +28,10 @@ namespace CrowfoundingHn.Projects.Application.Commands
             VideoUrls = videosUrls;
             TargetAmount = targetAmount;
             PredefinedAmounts = predefinedAmounts;
+            DeadLine = deadLine;
         }
 
+        public DateTime DeadLine { get; private set; }
         public string Name { get; private set; }
 
         public string Abstract { get; private set; }

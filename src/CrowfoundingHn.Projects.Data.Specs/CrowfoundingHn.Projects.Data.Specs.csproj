@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="when_get_project_from_mongo_by_id.cs" />
     <Compile Include="when_adding_project_to_mongo_db.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
