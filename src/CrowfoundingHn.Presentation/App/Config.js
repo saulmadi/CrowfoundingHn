@@ -15,9 +15,10 @@ app.config(function($routeProvider) {
         });
 });
 
-app.run(function($http) {
+app.run(['$http','localStorageService',function($http,localStorageService) {
     $http.defaults.headers.common.Accept = "application/json";
-});
+    $http.defaults.headers.common.Authorization = "OAuth " + localStorageService.get('AuthToken');
+}]);
 
 
 app.run(['$rootScope', '$window', 'LoginService', 'localStorageService', function ($scope, $window, LoginService, localStorageService) {

@@ -23,5 +23,10 @@ namespace CrowfoundingHn.Common.Authentication
         public DateTime ExpirationDate { get; private set; }
 
         public Guid Id { get; private set; }
+
+        public void CheckAvility(DateTime currentDate)
+        {
+            if (ExpirationDate < currentDate) throw new UnauthorizedAccessException();
+        }
     }
 }
