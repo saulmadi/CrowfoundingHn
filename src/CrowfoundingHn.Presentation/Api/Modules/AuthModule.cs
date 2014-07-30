@@ -53,7 +53,7 @@ namespace CrowfoundingHn.Presentation.Api.Modules
                     }
                     catch (EntityNotFoundException<User>)
                     {
-                        throw new UnauthorizedAccessException();
+                        return new TokenResponse { Token = null };
                     }
                 };
         }

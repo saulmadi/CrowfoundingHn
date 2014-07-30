@@ -1,4 +1,4 @@
-﻿var app = angular.module("crowfoundingHn", ["ng", "ngRoute", "ui.bootstrap"]);
+﻿var app = angular.module("crowfoundingHn", ["ng", "ngRoute", "ui.bootstrap", "LocalStorageModule"]);
 
 app.config(function($routeProvider) {
     $routeProvider
@@ -18,3 +18,29 @@ app.config(function($routeProvider) {
 app.run(function($http) {
     $http.defaults.headers.common.Accept = "application/json";
 });
+
+
+app.run(['$rootScope', '$window', 'LoginService', 'localStorageService', function ($scope, $window, LoginService, localStorageService) {
+ 
+
+    $scope.logIn = function(loginModel) {
+
+        LoginService.signIn(loginModel).success(function(response) {
+            if (response.token) {
+                $scope.showLoginFail = false;
+                localStorageService.set('AuthToken', response.Token);
+                $scope.showMail = true;
+
+                $scope.email = loginModel.email;
+
+
+            } else {
+                $scope.showLoginFail = true;
+                $scope.showMail = false;
+            }
+            
+        });
+    };
+
+   
+}]);

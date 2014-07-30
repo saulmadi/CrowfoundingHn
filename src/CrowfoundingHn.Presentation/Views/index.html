@@ -14,7 +14,7 @@
         <script src="../Assets/bower_components/angular-bootstrap/ui-bootstrap.js"> </script>
         <script src="../Assets/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"> </script>
         <script src="../Assets/bower_components/jquery/dist/jquery.min.js"> </script>
-        
+        <script src="../Assets/anglar-local-storage/angular-local-storage.js"></script>
         <script>
             $(function () {
         
@@ -45,11 +45,11 @@
                             <a class="dropdown-toggle " href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
                             <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0;">
                                 <form  >
-                                    <input id="loginEmail" style="margin-bottom: 15px;" type="email" placeholder="Email"  />
-                                    <input id="loginPassword" style="margin-bottom: 15px;" type="password" placeholder="Password"  />
+                                    <input id="loginEmail" style="margin-bottom: 15px;" type="email" placeholder="Email" ng-model ="login.Email"  />
+                                    <input id="loginPassword" style="margin-bottom: 15px;" type="password" placeholder="Password"   ng-model="login.Password"/>
 
  
-                                    <input class="btn btn-primary" style="clear: left; font-size: 13px; height: 32px; width: 100%;" type="submit"  value="Sign In" />
+                                    <input class="btn btn-primary" ng-click="logIn(login)" style="clear: left; font-size: 13px; height: 32px; width: 100%;" type="submit"  value="Sign In" />
                                 </form>
                                 <br/>
                             </div>

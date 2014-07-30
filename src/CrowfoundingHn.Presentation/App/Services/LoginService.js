@@ -9,6 +9,15 @@
         });
     };
 
+    factory.signIn = function(loginRequest) {
+
+        return $http({
+            url: "/auth/signin",
+            method: "POST",
+            data:loginRequest
+        });
+    };
+
     return factory;
 
 }]);
