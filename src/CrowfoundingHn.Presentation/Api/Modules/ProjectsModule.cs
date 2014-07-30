@@ -11,9 +11,14 @@ namespace CrowfoundingHn.Presentation.Api.Modules
     {
         public ProjectsModule(ICommandDispatcher commandDispatcher)
             : base("/projects")
+
         {
+           
+
             Post["/"] = x =>
                 {
+                    var session = this.UserSession();
+
                     var request = this.Bind<ProjectRequest>();
 
                     var command = new CreateProject(

@@ -1,10 +1,11 @@
 using System;
 
 using CrowfoundingHn.Common.Authentication;
+using CrowfoundingHn.Presentation.Api.Infrastructure;
 
 using Nancy;
 
-namespace CrowfoundingHn.Presentation.Api.Infrastructure
+namespace CrowfoundingHn.Presentation.Api
 {
     public static class IdentityExtension
     {

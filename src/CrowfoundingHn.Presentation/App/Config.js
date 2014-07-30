@@ -15,6 +15,26 @@ app.config(function($routeProvider) {
         });
 });
 
+
+app.config(['$httpProvider', function ($httpProvider) {
+    console.log("defining 401 status code interceptor");
+    $httpProvider.interceptors.push(['$q', '$location', 'localStorageService', function ($q, $location, localStorageService) {
+        return {
+            'responseError': function(rejection) {
+                console.log("Response error: "+ JSON.stringify(rejection));
+                var isLogin = rejection.config.url.indexOf("login") > -1;
+                if (rejection.status == 401 && !isLogin) {
+                    console.log("Not logged in. Redirecting first");
+                    var token = 'AuthToken';
+                    localStorageService.remove(token);
+                    $location.path('/');                        
+                }
+                return $q.reject(rejection);
+            }
+        };
+    }]);
+}])
+
 app.run(['$http','localStorageService',function($http,localStorageService) {
     $http.defaults.headers.common.Accept = "application/json";
     $http.defaults.headers.common.Authorization = "OAuth " + localStorageService.get('AuthToken');
