@@ -19,7 +19,7 @@ namespace CrowfoundingHn.Presentation.Api.Infrastructure
         {
             get
             {
-                return _session.User.Email;
+                return Session.User.Email;
             }
         }
 
@@ -28,6 +28,14 @@ namespace CrowfoundingHn.Presentation.Api.Infrastructure
             get
             {
                 return new string[] { };
+            }
+        }
+
+        public UserSession Session
+        {
+            get
+            {
+                return _session;
             }
         }
     }

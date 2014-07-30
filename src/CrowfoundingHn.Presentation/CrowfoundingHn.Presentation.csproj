@@ -211,6 +211,7 @@
     <Compile Include="Api\Infrastructure\Bootstraper.cs" />
     <Compile Include="Api\Infrastructure\ConfigureWebDependencies.cs" />
     <Compile Include="Api\Infrastructure\CrowFoundingHnUserIdentity.cs" />
+    <Compile Include="Api\Infrastructure\IdentityExtension.cs" />
     <Compile Include="Api\Infrastructure\IUserMapper.cs" />
     <Compile Include="Api\Modules\AuthModule.cs" />
     <Compile Include="Api\Modules\HomeModule.cs" />

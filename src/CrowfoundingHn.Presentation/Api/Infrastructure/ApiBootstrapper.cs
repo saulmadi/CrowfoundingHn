@@ -3,7 +3,6 @@ using System.Linq;
 
 using Autofac;
 
-using CrowfoundingHn.Common.Authentication;
 using CrowfoundingHn.Common.Bootstrapper;
 using CrowfoundingHn.Common.Bootstrapper.Authentication;
 using CrowfoundingHn.Common.Bootstrapper.Project;
@@ -81,6 +80,10 @@ namespace CrowfoundingHn.Presentation.Api.Infrastructure
             {
                 ctx.Response = new Response { };
                 AddCorsHeaders()(ctx);
+            }
+            if (err is UnauthorizedAccessException)
+            {
+                return ctx.Response.WithStatusCode(HttpStatusCode.Unauthorized);
             }
 
             return ctx.Response;
