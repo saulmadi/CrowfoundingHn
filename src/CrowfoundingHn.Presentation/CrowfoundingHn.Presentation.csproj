@@ -294,6 +294,7 @@
     <Content Include="Assets\bower_components\jquery\src\sizzle\dist\sizzle.min.map" />
     <Content Include="connectionString.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

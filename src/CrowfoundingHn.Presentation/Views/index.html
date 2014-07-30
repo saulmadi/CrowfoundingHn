@@ -39,9 +39,10 @@
                         <li><a href="#/projects">My Projects</a></li>
                     </ul>
                     
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a class="navbar-link" href="#/register">Sign Up</a></li>
-                        <li class="dropdown">
+                    <ul  class="nav navbar-nav navbar-right">
+                        <li ng-show="!showMail"><a class="navbar-link" href="#/register">Sign Up</a></li>
+
+                        <li class="dropdown" ng-show="!showMail">
                             <a class="dropdown-toggle " href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
                             <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0;">
                                 <form  >
@@ -50,10 +51,13 @@
 
  
                                     <input class="btn btn-primary" ng-click="logIn(login)" style="clear: left; font-size: 13px; height: 32px; width: 100%;" type="submit"  value="Sign In" />
+                                    <span ng-show="showLoginFail" class="label label-danger">Check your credentials</span>
                                 </form>
                                 <br/>
                             </div>
                         </li>
+                        
+                        <li ng-show="showMail"><a class="navbar-link" >{{ email }}</a></li>
                     </ul>
                     
            
