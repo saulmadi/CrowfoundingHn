@@ -14,7 +14,7 @@
         <script src="../Assets/bower_components/angular-bootstrap/ui-bootstrap.js"> </script>
         <script src="../Assets/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"> </script>
         <script src="../Assets/bower_components/jquery/dist/jquery.min.js"> </script>
-        
+        <script src="../Assets/anglar-local-storage/angular-local-storage.js"></script>
         <script>
             $(function () {
         
@@ -27,7 +27,7 @@
         </script>
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav class="navbar  navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">Crowdfunding Hn</a>
@@ -39,21 +39,25 @@
                         <li><a href="#/projects">My Projects</a></li>
                     </ul>
                     
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a class="navbar-link" href="#/register">Sign Up</a></li>
-                        <li class="dropdown">
+                    <ul  class="nav navbar-nav navbar-right">
+                        <li ng-show="!showMail"><a class="navbar-link" href="#/register">Sign Up</a></li>
+
+                        <li class="dropdown" ng-show="!showMail">
                             <a class="dropdown-toggle " href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
                             <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0;">
                                 <form  >
-                                    <input id="loginEmail" style="margin-bottom: 15px;" type="email" placeholder="Email"  />
-                                    <input id="loginPassword" style="margin-bottom: 15px;" type="password" placeholder="Password"  />
+                                    <input id="loginEmail" style="margin-bottom: 15px;" type="email" placeholder="Email" ng-model ="login.Email"  />
+                                    <input id="loginPassword" style="margin-bottom: 15px;" type="password" placeholder="Password"   ng-model="login.Password"/>
 
  
-                                    <input class="btn btn-primary" style="clear: left; font-size: 13px; height: 32px; width: 100%;" type="submit"  value="Sign In" />
+                                    <input class="btn btn-primary" ng-click="logIn(login)" style="clear: left; font-size: 13px; height: 32px; width: 100%;" type="submit"  value="Sign In" />
+                                    <span ng-show="showLoginFail" class="label label-danger">Check your credentials</span>
                                 </form>
                                 <br/>
                             </div>
                         </li>
+                        
+                        <li ng-show="showMail" ><span class="navbar-text" >{{ email }}</span></li>
                     </ul>
                     
            

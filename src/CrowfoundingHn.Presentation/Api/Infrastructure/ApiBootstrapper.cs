@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 using Autofac;
 
@@ -7,6 +8,7 @@ using CrowfoundingHn.Common.Bootstrapper.Authentication;
 using CrowfoundingHn.Common.Bootstrapper.Project;
 
 using Nancy;
+using Nancy.Authentication.Stateless;
 using Nancy.Bootstrapper;
 using Nancy.Conventions;
 
@@ -23,15 +25,53 @@ namespace CrowfoundingHn.Presentation.Api.Infrastructure
 
             AddBootstrapperTask(new ConfigureAuthenticationCommands());
             AddBootstrapperTask(new ConfigureAuthenticationDependencies());
+            AddBootstrapperTask(new ConfigureWebDependencies());
         }
 
         protected override void RequestStartup(ILifetimeScope container, IPipelines pipelines, NancyContext context)
         {
-            //pipelines.OnError += (ctx, err) => HandleExceptions(err, ctx);
+            var config = new StatelessAuthenticationConfiguration(ctx =>
+                {
+                    var token = GetToken(ctx);
+
+                    if (token.HasValue)
+                    {
+                        var mapper = container.Resolve<IUserMapper>();
+
+                        return mapper.GetUserIdentity(token.Value);
+                    }
+
+                    return null;
+                } );
+            pipelines.OnError += (ctx, err) => HandleExceptions(err, ctx);
 
             pipelines.AfterRequest.AddItemToEndOfPipeline(AddCorsHeaders());
 
+            StatelessAuthentication.Enable(pipelines, config);
+
             base.RequestStartup(container, pipelines, context);
+        }
+
+        static Guid? GetToken(NancyContext ctx)
+        {
+            const string headerName = "Authorization";
+            Guid token = Guid.Empty;
+            bool hasAuthHeader = ctx.Request.Headers.Keys.Contains(headerName);
+            if (hasAuthHeader)
+            {
+                string authHeader =
+                    ctx.Request.Headers[headerName].FirstOrDefault();
+                if (authHeader != null)
+                    if(!Guid.TryParse( authHeader.Replace("OAuth ", ""), out token))
+                        return null;
+            }
+            else
+            {
+                return null;
+            }
+
+
+            return token;
         }
 
         static Response HandleExceptions(Exception err, NancyContext ctx)
@@ -40,6 +80,10 @@ namespace CrowfoundingHn.Presentation.Api.Infrastructure
             {
                 ctx.Response = new Response { };
                 AddCorsHeaders()(ctx);
+            }
+            if (err is UnauthorizedAccessException)
+            {
+                return ctx.Response.WithStatusCode(HttpStatusCode.Unauthorized);
             }
 
             return ctx.Response;

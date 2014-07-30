@@ -80,6 +80,7 @@
     <Content Include="App\Views\home.html" />
     <Content Include="App\Views\register.html" />
     <Content Include="App\Views\project.html" />
+    <Content Include="Assets\anglar-local-storage\angular-local-storage.js" />
     <Content Include="Assets\bower_components\angular-bootstrap\ui-bootstrap-tpls.js" />
     <Content Include="Assets\bower_components\angular-bootstrap\ui-bootstrap-tpls.min.js" />
     <Content Include="Assets\bower_components\angular-bootstrap\ui-bootstrap.js" />
@@ -205,13 +206,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\IdentityExtension.cs" />
     <Compile Include="Api\Infrastructure\ApiBootstrapper.cs" />
+    <Compile Include="Api\Infrastructure\ApiUserMapper.cs" />
     <Compile Include="Api\Infrastructure\Bootstraper.cs" />
+    <Compile Include="Api\Infrastructure\ConfigureWebDependencies.cs" />
+    <Compile Include="Api\Infrastructure\CrowFoundingHnUserIdentity.cs" />
+    <Compile Include="Api\Infrastructure\IUserMapper.cs" />
     <Compile Include="Api\Modules\AuthModule.cs" />
     <Compile Include="Api\Modules\HomeModule.cs" />
     <Compile Include="Api\Modules\ProjectsModule.cs" />
     <Compile Include="Api\Requests\UserRequest.cs" />
     <Compile Include="Api\Requests\ProjectRequest.cs" />
+    <Compile Include="Api\Requests\UserSessionRequest.cs" />
+    <Compile Include="Api\Responses\TokenResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -291,6 +299,7 @@
     <Content Include="Assets\bower_components\jquery\src\sizzle\dist\sizzle.min.map" />
     <Content Include="connectionString.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -300,7 +309,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Api\Responses\" />
     <Folder Include="App\Directives\" />
   </ItemGroup>
   <ItemGroup>

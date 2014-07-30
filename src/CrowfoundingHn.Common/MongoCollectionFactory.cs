@@ -23,9 +23,4 @@ namespace CrowfoundingHn.Common
             return client.GetServer().GetDatabase(mongoUri.DatabaseName).GetCollection(collectionName);
         }
     }
-
-    public interface IMongoCollectionFactory
-    {
-        MongoCollection CreateCollection(string collectionName);
-    }
 }

@@ -1,8 +1,13 @@
-﻿using MongoDB.Driver;
+﻿using System;
+using System.Linq;
+using System.Linq.Expressions;
 
+using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 namespace CrowfoundingHn.Common.Data
 {
-    public class MongoRepository<TEntity> where TEntity:IEntity
+    public class MongoRepository<TEntity> :IRepository<TEntity>
+        where TEntity:IEntity
     {
         readonly MongoCollection _collection;
 
@@ -13,11 +18,27 @@ namespace CrowfoundingHn.Common.Data
             _collection = collection;
         }
 
-        public TEntity Create(TEntity project)
+        public TEntity Create(TEntity entity)
         {
-            _collection.Insert(project);
+            _collection.Insert(entity);
             
-            return project;
+            return entity;
+        }
+
+        public TEntity First(Expression<Func<TEntity, bool>> query)
+        {
+            var entity = _collection.AsQueryable<TEntity>().FirstOrDefault(query);
+            if (entity == null)
+            {
+                throw new EntityNotFoundException<TEntity>();
+            }
+            return entity;
+        }
+
+        public TEntity GetById(Guid id)
+        {
+
+            return _collection.FindOneByIdAs<TEntity>(id);
         }
     }
 }

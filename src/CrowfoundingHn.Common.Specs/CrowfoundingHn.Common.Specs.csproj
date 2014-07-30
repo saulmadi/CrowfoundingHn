@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenticationSpecs\when_creating_a_new_user_session.cs" />
     <Compile Include="AuthenticationSpecs\when_creating_a_user.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

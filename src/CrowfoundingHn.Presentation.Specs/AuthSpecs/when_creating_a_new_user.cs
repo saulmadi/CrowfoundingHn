@@ -1,9 +1,6 @@
 ﻿using AcklenAvenue.Testing.Moq.ExpectedObjects;
 
-using CrowfoundingHn.Common;
-using CrowfoundingHn.Common.Authentication;
 using CrowfoundingHn.Common.Authentication.Commands;
-using CrowfoundingHn.Presentation.Api.Modules;
 using CrowfoundingHn.Presentation.Api.Requests;
 
 using FizzWare.NBuilder;
@@ -19,14 +16,8 @@ using It = Machine.Specifications.It;
 
 namespace CrowfoundingHn.Presentation.Specs.AuthSpecs
 {
-    public class when_creating_a_new_user
+    public class when_creating_a_new_user : given_a_auth_module_context
     {
-        static ICommandDispatcher _commandDisptacher;
-
-        static Browser _browser;
-
-        static IUserRepository _userRepository;
-
         static UserRequest _userRequest;
 
         static CreateUser _excpectedCommand;
@@ -35,14 +26,7 @@ namespace CrowfoundingHn.Presentation.Specs.AuthSpecs
 
         Establish context = () =>
             {
-                _commandDisptacher = Mock.Of<ICommandDispatcher>();
-                _userRepository = Mock.Of<IUserRepository>();
-                _browser = new Browser(
-                    x =>
-                        {
-                            x.Module<AuthModule>();
-                            x.Dependency(_commandDisptacher);
-                        });
+                
 
                 _userRequest = new UserRequest
                                       {
@@ -65,11 +49,11 @@ namespace CrowfoundingHn.Presentation.Specs.AuthSpecs
                                           .Build();
             };
 
-        Because of = () => _response = _browser.PostSecureJson("/auth/create", _userRequest);
+        Because of = () => _response = Browser.PostSecureJson("/auth/create", _userRequest);
 
         It should_dispatch_create_user_command =
             () =>
-            Mock.Get(_commandDisptacher)
+            Mock.Get(CommandDisptacher)
                 .Verify(dispatcher => dispatcher.Dispatch(WithExpected.Object(_excpectedCommand)));
 
         It should_return_200_status = () => _response.StatusCode.ShouldEqual(HttpStatusCode.OK);

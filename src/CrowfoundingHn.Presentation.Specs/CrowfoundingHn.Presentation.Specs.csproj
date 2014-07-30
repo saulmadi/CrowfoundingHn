@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AcklenAvenue.Testing.Moq">
+      <HintPath>..\..\lib\AcklenAvenue.Testing.Moq.1.0.3.0\lib\net40\AcklenAvenue.Testing.Moq.dll</HintPath>
+    </Reference>
     <Reference Include="AcklenAvenue.Testing.Moq.ExpectedObjects">
       <HintPath>..\..\lib\AcklenAvenue.Testing.Moq.ExpectedObjects.1.0.1.3\lib\net40\AcklenAvenue.Testing.Moq.ExpectedObjects.dll</HintPath>
     </Reference>
@@ -76,7 +79,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthSpecs\given_a_auth_module_context.cs" />
     <Compile Include="AuthSpecs\when_creating_a_new_user.cs" />
+    <Compile Include="AuthSpecs\when_creating_a_new_user_sesion.cs" />
+    <Compile Include="BodyExtensions.cs" />
     <Compile Include="ProjectSpecs\when_creating_a_project.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecureBrowserExtentions.cs" />
